@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://charwakcd.github.io/fmcg-business/sitemap.xml
+Sitemap: https://charwakcd.github.io/bhosari-loan/sitemap.xml
