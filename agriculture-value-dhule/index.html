@@ -3,98 +3,370 @@
 <head>
   <meta charset="utf-8" />
   <title>Agricultural Value Addition in Dhule | From Commodity Trading to Consumer Brand Manufacturing</title>
-  
+
   <!-- Canonical -->
   <link rel="canonical" href="https://charwakcd.github.io/fmcg-business/agriculture-value-dhule/" />
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
   <meta name="description" content="Why Agricultural Businesses in Dhule Are Creating More Value Through Consumer Manufacturing. Exploring how entrepreneurs in Avdhan and Nardana MIDC diversify into brands." />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-  
+
+  <!-- Preload for LCP Optimization -->
+  <link rel="preload" as="image" href="https://images.pexels.com/photos/3846038/pexels-photo-3846038.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1200&h=1600" fetchpriority="high" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
   <meta property="og:title" content="Agricultural Value Addition in Dhule | From Commodity Trading to Consumer Brand Manufacturing" />
   <meta property="og:description" content="Why Dhule's Agri Entrepreneurs Are Moving Beyond Commodity Trading into Consumer Brands." />
   <meta property="og:url" content="https://charwakcd.github.io/fmcg-business/agriculture-value-dhule/" />
-  <meta property="og:image" content="https://images.pexels.com/photos/3846038/pexels-photo-3846038.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;h=1600&amp;w=1200" />
-  
+  <meta property="og:image" content="https://images.pexels.com/photos/3846038/pexels-photo-3846038.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1200&h=1600" />
+
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Agricultural Value Addition in Dhule | From Commodity Trading to Consumer Brand Manufacturing" />
   <meta name="twitter:description" content="Why Dhule's Agri Entrepreneurs Are Moving Beyond Commodity Trading into Consumer Brands." />
-  <meta name="twitter:image" content="https://images.pexels.com/photos/3846038/pexels-photo-3846038.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;h=1600&amp;w=1200" />
-  
+  <meta name="twitter:image" content="https://images.pexels.com/photos/3846038/pexels-photo-3846038.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1200&h=1600" />
+
   <!-- AMP runtime and story components -->
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
-  <script async custom-element="amp-story-auto-analytics" src="https://cdn.ampproject.org/v0/amp-story-auto-analytics-0.1.js"></script>
-  
+  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+  <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
   <!-- AMP boilerplate -->
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
   <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-  
+
   <!-- Production CSS -->
   <style amp-custom>
-    :root{--accent:#FF6B35;--bg:#000;--muted:#f0f0f0;--white:#fff;}
-    html,body{height:100%;margin:0;background:var(--bg);font-family:'Inter',sans-serif;}
-    amp-story{color:var(--white);max-width:420px;margin:0 auto;}
-    
+    :root {
+      --accent: #FF6B35;
+      --accent-dim: #E05A2A;
+      --bg: #12161A;
+      --panel: #1B2126;
+      --paper: #F4EFE4;
+      --paper-dim: #DAD2C1;
+      --muted: #A7B0B4;
+      --white: #fff;
+      --line: rgba(244, 239, 228, 0.14);
+      --font-display: 'Inter', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'Inter', monospace;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: var(--bg);
+      font-family: var(--font-body);
+    }
+
+    amp-story {
+      color: var(--white);
+      max-width: 420px;
+      margin: 0 auto;
+      font-family: var(--font-body);
+    }
+
     .image-overlay {
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: rgba(0, 0, 0, 0.6);
-        z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      background: linear-gradient(180deg, rgba(18, 22, 26, 0.05) 0%, rgba(18, 22, 26, 0.25) 45%, rgba(18, 22, 26, 0.9) 100%);
     }
 
     .text-container {
-        padding: 22px;
-        background: rgba(0, 0, 0, 0.65);
-        border-radius: 20px;
-        margin: auto 15px;
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border-top: 1px solid rgba(255, 255, 255, 0.25);
-        border-left: 1px solid rgba(255, 255, 255, 0.25);
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
-        z-index: 2;
+      padding: 24px 20px 28px;
+      margin: auto 15px 20px;
+      z-index: 2;
+      width: calc(100% - 30px);
+      max-width: 380px;
+      background: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
     }
 
-    .badge{display:inline-block;background:var(--accent);color:#fff;padding:6px 14px;border-radius:20px;font-weight:700;font-size:12px;margin-bottom:12px;text-transform:uppercase;letter-spacing:0.5px;}
-    h1{font-size:26px;line-height:1.2;margin:6px 0 10px 0;color:var(--white);font-weight:700;}
-    h2{font-size:18px;line-height:1.3;margin:6px 0 8px 0;color:var(--white);font-weight:700;}
-    h3{font-size:14px;color:var(--accent);margin:6px 0;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;}
-    p{color:var(--muted);font-size:14px;line-height:1.6;margin:10px 0 4px 0;}
-    
-    .attachment-content{background:#fff;color:#222;padding:24px;border-radius:12px;font-size:15px;line-height:1.7;}
-    
+    h1, h2, h3, p, .hero-sub, .badge {
+      text-shadow: 0 2px 16px rgba(0, 0, 0, 0.85);
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 11px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-family: var(--font-mono);
+      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    .badge em {
+      font-style: normal;
+      color: rgba(255, 255, 255, 0.75);
+      font-weight: 400;
+    }
+
+    h1 {
+      font-size: 23px;
+      line-height: 1.3;
+      margin: 4px 0 8px 0;
+      color: var(--white);
+      font-weight: 700;
+      font-family: var(--font-display);
+    }
+
+    h2 {
+      font-size: 18px;
+      line-height: 1.35;
+      margin: 4px 0 6px 0;
+      color: var(--white);
+      font-weight: 700;
+      font-family: var(--font-display);
+    }
+
+    h3 {
+      font-size: 13px;
+      color: var(--accent);
+      margin: 8px 0 4px 0;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      font-family: var(--font-mono);
+    }
+
+    h3::before {
+      content: "--- ";
+      color: var(--accent);
+    }
+
+    p {
+      color: var(--paper-dim);
+      font-size: 13px;
+      line-height: 1.65;
+      margin: 8px 0 2px 0;
+      font-family: var(--font-body);
+      max-width: 44ch;
+    }
+
+    p.hero-sub {
+      font-weight: 500;
+      color: var(--paper);
+      font-size: 14px;
+      max-width: 44ch;
+      margin-bottom: 2px;
+    }
+
     .brand-header {
-        position: absolute;
-        top: 24px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        background: rgba(0,0,0,0.5);
-        padding: 8px 16px;
-        border-radius: 30px;
-        z-index: 20;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255,255,255,0.15);
-        width: max-content;
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(0, 0, 0, 0.55);
+      padding: 6px 16px 6px 12px;
+      border-radius: 30px;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      width: max-content;
     }
-    .brand-name{color:var(--white);font-size:13px;font-weight:700;letter-spacing:0.5px;}
-    
-    ul { padding-left: 20px; margin-top: 10px; }
-    li { margin-bottom: 6px; font-size: 14px; }
-    
-    .related-links a {color: #FF6B35; font-weight: 600; text-decoration: none; display: block; margin-bottom: 8px;}
-    .related-links a:hover {text-decoration: underline;}
 
-    @media(min-width:720px){amp-story{max-width:720px;}h1{font-size:32px;}h2{font-size:22px;}}
+    .brand-name {
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      font-family: var(--font-mono);
+    }
+
+    .brand-header amp-img {
+      border-radius: 50%;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--bg);
+      padding: 10px 22px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 12px;
+      text-decoration: none;
+      font-family: var(--font-mono);
+      letter-spacing: 0.04em;
+      margin-top: 12px;
+      transition: background 0.2s ease;
+      clip-path: polygon(0 0, 100% 0, 100% 70%, 94% 100%, 0 100%);
+      text-shadow: none;
+    }
+
+    .cta-btn:hover {
+      background: var(--paper);
+    }
+
+    .cta-arrow {
+      display: inline-block;
+      transition: transform 0.2s ease;
+    }
+
+    .cta-btn:hover .cta-arrow {
+      transform: translateX(3px);
+    }
+
+    /* Attachment styles */
+    .attachment-content {
+      background: #fff;
+      color: #222;
+      padding: 24px 20px;
+      border-radius: 12px;
+      font-size: 14px;
+      line-height: 1.7;
+      font-family: var(--font-body);
+    }
+
+    .attachment-content h3 {
+      color: var(--accent-dim);
+      font-size: 16px;
+      text-transform: none;
+      letter-spacing: 0;
+      font-family: var(--font-display);
+      margin-bottom: 8px;
+      text-shadow: none;
+    }
+
+    .attachment-content h3::before {
+      content: "";
+    }
+
+    .attachment-content h4 {
+      font-size: 15px;
+      font-weight: 700;
+      margin: 14px 0 8px 0;
+      color: #1a1a1a;
+      font-family: var(--font-display);
+    }
+
+    .attachment-content p {
+      color: #3A4147;
+      font-size: 14px;
+      max-width: 100%;
+      text-shadow: none;
+    }
+
+    .attachment-content hr {
+      border: 0;
+      border-top: 1px solid #ddd;
+      margin: 16px 0;
+    }
+
+    .related-links a {
+      color: var(--accent-dim);
+      font-weight: 600;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .related-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* AMP Accordion styling */
+    .faq-accordion {
+      margin: 0;
+      background: transparent;
+    }
+    .faq-accordion section {
+      border-bottom: 1px solid #eee;
+      padding: 4px 0;
+    }
+    .faq-accordion h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 0;
+      padding: 10px 0;
+      cursor: pointer;
+      font-family: var(--font-body);
+    }
+    .faq-accordion h4::after {
+      content: " ▼";
+      font-size: 12px;
+      color: var(--accent);
+      float: right;
+    }
+    .faq-accordion section[expanded] h4::after {
+      content: " ▲";
+    }
+    .faq-accordion p {
+      font-size: 13px;
+      color: #3A4147;
+      padding: 0 0 10px 0;
+      margin: 0;
+      max-width: 100%;
+      text-shadow: none;
+    }
+
+    @media (min-width: 720px) {
+      amp-story {
+        max-width: 720px;
+      }
+      h1 {
+        font-size: 30px;
+      }
+      h2 {
+        font-size: 22px;
+      }
+      p {
+        font-size: 15px;
+      }
+      .text-container {
+        padding: 32px 26px 36px;
+        max-width: 500px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      h1 {
+        font-size: 20px;
+      }
+      h2 {
+        font-size: 16px;
+      }
+      p {
+        font-size: 12px;
+      }
+      .text-container {
+        padding: 16px 14px 20px;
+        margin: auto 10px 14px;
+      }
+      .badge {
+        font-size: 10px;
+        padding: 3px 12px;
+      }
+      h3 {
+        font-size: 11px;
+      }
+    }
   </style>
 
   <!-- Full Schema -->
@@ -120,7 +392,7 @@
       },
       {
         "@type": "Person",
-        "@id": "https://charwak.co.in/",
+        "@id": "https://charwak.co.in/#charwak-deshpande",
         "name": "Charwak Deshpande",
         "url": "https://charwak.co.in/",
         "description": "Charwak Deshpande has more than 30 years of experience in commercial finance, business strategy, international market development, SME advisory, fundraising, mergers & acquisitions (M&A), business expansion, and has evaluated more than 100 industries globally.",
@@ -130,6 +402,24 @@
           "Business Acquisition Advisor",
           "SME Advisor",
           "Commercial Finance Consultant"
+        ],
+        "knowsAbout": [
+          "Business Acquisition",
+          "Business Expansion",
+          "Commercial Finance",
+          "FMCG",
+          "Manufacturing",
+          "Food Processing",
+          "Private Label Manufacturing",
+          "Dealer Network Development",
+          "SME Advisory",
+          "Business Strategy",
+          "Corporate Finance",
+          "Working Capital",
+          "Fundraising",
+          "Mergers and Acquisitions",
+          "International Market Development",
+          "Exports"
         ]
       },
       {
@@ -139,28 +429,19 @@
         "name":"Agricultural Value Addition in Dhule | From Commodity Trading to Consumer Brand Manufacturing",
         "isPartOf":{"@id":"https://charwakcd.github.io/fmcg-business/agriculture-value-dhule/#website"},
         "primaryImageOfPage":{"@id":"https://charwakcd.github.io/fmcg-business/agriculture-value-dhule/#primaryimage"},
-        "breadcrumb":{"@id":"https://charwakcd.github.io/fmcg-business/agriculture-value-dhule/#breadcrumb"},
-        "speakable": {
-          "@type": "SpeakableSpecification",
-          "cssSelector": [".badge", "h1", "h2", ".attachment-content h3", ".attachment-content p"]
-        }
+        "breadcrumb":{"@id":"https://charwakcd.github.io/fmcg-business/agriculture-value-dhule/#breadcrumb"}
       },
       {
         "@type":"Article",
         "@id":"https://charwakcd.github.io/fmcg-business/agriculture-value-dhule/#article",
         "headline":"Why Agricultural Businesses in Dhule Are Creating More Value Through Consumer Manufacturing",
-        "author":{"@id":"https://charwak.co.in/"},
+        "author":{"@id":"https://charwak.co.in/#charwak-deshpande"},
         "publisher":{"@id":"https://charwakcd.github.io/fmcg-business/agriculture-value-dhule/#organization"},
         "mainEntityOfPage":{"@id":"https://charwakcd.github.io/fmcg-business/agriculture-value-dhule/#webpage"},
         "datePublished":"2026-07-20T08:00:00+05:30",
         "image":{"@id":"https://charwakcd.github.io/fmcg-business/agriculture-value-dhule/#primaryimage"},
         "inLanguage":"en-IN",
-        "description":"Explore how agricultural businesses in Dhule, Avdhan MIDC, Nardana MIDC, and Shirpur are moving beyond commodity trading into food processing and consumer brand manufacturing.",
-        "about": [
-          {"@type": "Thing", "name": "Agricultural Value Addition"},
-          {"@type": "Thing", "name": "Consumer Brand Creation"},
-          {"@type": "Thing", "name": "Manufacturing Diversification"}
-        ],
+        "description":"Explore how agricultural businesses in Dhule, Avdhan MIDC, Nardana MIDC, and Shirpur are moving beyond commodity trading into food processing and consumer brand manufacturing. Many local businesses near Dhule are exploring this opportunity.",
         "contentLocation": [
           {"@type": "Place", "name": "Dhule MIDC", "address": {"@type": "PostalAddress", "addressLocality": "Dhule", "addressRegion": "Maharashtra", "addressCountry": "IN"}},
           {"@type": "Place", "name": "Avdhan MIDC"},
@@ -170,67 +451,62 @@
           {"@type": "Place", "name": "Sakri"},
           {"@type": "Place", "name": "Dondaicha"},
           {"@type": "Place", "name": "Deopur"},
-          {"@type": "Place", "name": "Chalisgaon Road"},
-          {"@type": "Place", "name": "Mumbai–Agra Highway"},
-          {"@type": "Place", "name": "Tapi Basin"},
-          {"@type": "Place", "name": "Panzara River Region"},
-          {"@type": "Place", "name": "Khandesh"},
-          {"@type": "Place", "name": "North Maharashtra"}
-        ]
-      },
-      {
-        "@type": "DefinedTermSet",
-        "@id": "https://charwakcd.github.io/fmcg-business/agriculture-value-dhule/#definedterms",
-        "name": "Industry Terminology Definitions",
-        "hasDefinedTerm": [
-          {"@type": "DefinedTerm","name": "Agro Processing","description": "Techniques and processes applied to agricultural raw products to transform them into intermediate or final consumer goods."},
-          {"@type": "DefinedTerm","name": "Agricultural Value Addition","description": "The process of increasing the economic value and consumer appeal of raw agricultural commodities through processing, packaging, or branding."},
-          {"@type": "DefinedTerm","name": "Commodity Trading","description": "The buying and selling of raw physical agricultural goods like unprocessed grains, cotton, or raw bulk oils, typically yielding low profit margins."},
-          {"@type": "DefinedTerm","name": "Edible Oil Processing","description": "Industrial extraction, refining, and purification of oils from seeds like groundnut, soy, or mustard into cooking oils."},
-          {"@type": "DefinedTerm","name": "Cotton Processing","description": "Ginning, pressing, and refining raw seed-cotton into lint bales and seeds optimized for textile value chains."},
-          {"@type": "DefinedTerm","name": "Dal Mill","description": "A processing facility dedicated to dehusking, splitting, and grading raw pulse crops into consumer-ready edible lentils."},
-          {"@type": "DefinedTerm","name": "Warehouse Logistics","description": "The systematic management of storing, handling, and moving bulk or packaged industrial goods within specialized storage assets."},
-          {"@type": "DefinedTerm","name": "Food Processing","description": "Transformation of agricultural raw ingredients into highly stable, packaged food items tailored for commercial retail."},
-          {"@type": "DefinedTerm","name": "Dealer Network","description": "An established regional infrastructure of B2B distributors, wholesalers, and trade partners driving physical brand placement."},
-          {"@type": "DefinedTerm","name": "Private Label Manufacturing","description": "An operational setup where a processing facility manufactures products under the brand name of a third-party retail entity."},
-          {"@type": "DefinedTerm","name": "Regional FMCG Brand","description": "Fast-Moving Consumer Goods marketed and distributed within a focused geographical territory, cultivating deep hyper-local equity."},
-          {"@type": "DefinedTerm","name": "SKU","description": "Stock Keeping Unit; a unique identification code representing a distinct product type, size, or packaging variant in inventory management."},
-          {"@type": "DefinedTerm","name": "Working Capital Cycle","description": "The operational duration required to convert net current assets and current liabilities back into accessible corporate cash flows."},
-          {"@type": "DefinedTerm","name": "Food Formulation","description": "The systematic blending and recipe standardization of raw components to ensure structural quality, taste consistency, and food safety profiles."},
-          {"@type": "DefinedTerm","name": "Brand Ownership","description": "Legal proprietary rights to trademarked intellectual property, creating sustainable intangible assets beyond generic physical inventory."},
-          {"@type": "DefinedTerm","name": "Manufacturing Capacity","description": "The peak production volume an industrial processing line can generate within a given fiscal or operational period."}
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://charwakcd.github.io/fmcg-business/agriculture-value-dhule/#faq",
-        "mainEntity": [
-          {"@type": "Question","name": "Why are agricultural businesses in Dhule expanding into manufacturing?","acceptedAnswer": {"@type": "Answer","text": "Businesses in Dhule are realizing that manufacturing and value addition provide higher, more stable margins and long-term enterprise value compared to traditional commodity trading."}},
-          {"@type": "Question","name": "How can edible oil businesses create more value through branded products?","acceptedAnswer": {"@type": "Answer","text": "By shifting from bulk trading to packaged, branded retail products, edible oil businesses can capture consumer loyalty, command premium pricing, and secure shelf space across regional markets."}},
-          {"@type": "Question","name": "Why are dealer networks valuable when evaluating manufacturing businesses?","acceptedAnswer": {"@type": "Answer","text": "Manufacturing capacity can be built quickly, but established dealer networks require years of trust and relationship building, making them the most critical asset for scaling consumer brands."}},
-          {"@type": "Question","name": "What should agri entrepreneurs evaluate before entering food manufacturing?","acceptedAnswer": {"@type": "Answer","text": "Entrepreneurs must evaluate market demand, distribution capabilities, regulatory compliance, working capital requirements, and formulation consistency before transitioning."}},
-          {"@type": "Question","name": "How does working capital influence manufacturing growth?","acceptedAnswer": {"@type": "Answer","text": "Working capital dictates how much inventory can be held, credit extended to distributors, and raw materials procured, acting as the primary constraint or accelerator for manufacturing scale."}},
-          {"@type": "Question","name": "Why is private label manufacturing becoming more attractive?","acceptedAnswer": {"@type": "Answer","text": "Private label manufacturing allows established processors to utilize excess capacity, generate consistent volume, and partner with large retailers without bearing brand-building costs."}},
-          {"@type": "Question","name": "How long does it typically take to build a regional consumer brand?","acceptedAnswer": {"@type": "Answer","text": "Building a recognized regional consumer brand typically requires 3 to 5 years of consistent product quality, targeted distribution, and steady market engagement."}},
-          {"@type": "Question","name": "How do Dhule's logistics and industrial infrastructure support manufacturing growth?","acceptedAnswer": {"@type": "Answer","text": "With zones like Avdhan MIDC and Nardana MIDC located near the Mumbai–Agra Highway, Dhule offers exceptional connectivity for raw material procurement and finished goods distribution."}},
-          {"@type": "Question","name": "Why are second-generation business families focusing on value-added manufacturing?","acceptedAnswer": {"@type": "Answer","text": "Second-generation leaders seek to modernize legacy commodity operations, build scalable corporate structures, and create intellectual property through brand ownership."}},
-          {"@type": "Question","name": "How can commodity businesses create long-term enterprise value through manufacturing?","acceptedAnswer": {"@type": "Answer","text": "By developing proprietary products, securing patents or formulations, and establishing a loyal consumer base, businesses shift valuation from just physical assets to powerful brand equity."}}
+          {"@type": "Place", "name": "Mumbai–Agra Highway"}
         ]
       },
       {
         "@type":"ImageObject",
         "@id":"https://charwakcd.github.io/fmcg-business/agriculture-value-dhule/#primaryimage",
-        "url":"https://images.pexels.com/photos/3846038/pexels-photo-3846038.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1600&w=1200",
+        "url":"https://images.pexels.com/photos/3846038/pexels-photo-3846038.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1200&h=1600",
         "width":1200,
         "height":1600,
-        "caption":"Agricultural entrepreneur visiting a modern food manufacturing facility near Dhule."
+        "caption":"Agricultural entrepreneur exploring value addition opportunities near Dhule."
       },
       {
         "@type":"BreadcrumbList",
         "@id":"https://charwakcd.github.io/fmcg-business/agriculture-value-dhule/#breadcrumb",
         "itemListElement":[
-          {"@type":"ListItem","position":1,"name":"FMCG Business Stories","item":"https://charwakcd.github.io/"},
+          {"@type":"ListItem","position":1,"name":"FMCG Business Stories","item":"https://charwakcd.github.io/fmcg-business/"},
           {"@type":"ListItem","position":2,"name":"Agricultural Value Addition Dhule","item":"https://charwakcd.github.io/fmcg-business/agriculture-value-dhule/"}
+        ]
+      },
+      {
+        "@type":"FAQPage",
+        "@id":"https://charwakcd.github.io/fmcg-business/agriculture-value-dhule/#faq",
+        "mainEntity":[
+          {"@type":"Question","name":"Why are agricultural businesses in Dhule expanding into manufacturing near them?","acceptedAnswer":{"@type":"Answer","text":"Businesses in Dhule are realizing that manufacturing and value addition provide higher, more stable margins and long-term enterprise value compared to traditional commodity trading. This shift is happening near you."}},
+          {"@type":"Question","name":"How can edible oil businesses create more value through branded products in your area?","acceptedAnswer":{"@type":"Answer","text":"By shifting from bulk trading to packaged, branded retail products, edible oil businesses can capture consumer loyalty, command premium pricing, and secure shelf space across regional markets near you."}},
+          {"@type":"Question","name":"Why are dealer networks valuable when evaluating manufacturing businesses near Dhule?","acceptedAnswer":{"@type":"Answer","text":"Manufacturing capacity can be built quickly, but established dealer networks require years of trust and relationship building, making them the most critical asset for scaling consumer brands in your area."}},
+          {"@type":"Question","name":"What should agri entrepreneurs evaluate before entering food manufacturing near them?","acceptedAnswer":{"@type":"Answer","text":"Entrepreneurs must evaluate market demand, distribution capabilities, regulatory compliance, working capital requirements, and formulation consistency before transitioning. This is essential for businesses near you."}},
+          {"@type":"Question","name":"How does working capital influence manufacturing growth in your area?","acceptedAnswer":{"@type":"Answer","text":"Working capital dictates how much inventory can be held, credit extended to distributors, and raw materials procured, acting as the primary constraint or accelerator for manufacturing scale near Dhule."}},
+          {"@type":"Question","name":"Why is private label manufacturing becoming more attractive near Dhule?","acceptedAnswer":{"@type":"Answer","text":"Private label manufacturing allows established processors to utilize excess capacity, generate consistent volume, and partner with large retailers without bearing brand-building costs in your locality."}},
+          {"@type":"Question","name":"How long does it typically take to build a regional consumer brand near you?","acceptedAnswer":{"@type":"Answer","text":"Building a recognized regional consumer brand typically requires 3 to 5 years of consistent product quality, targeted distribution, and steady market engagement in your area."}},
+          {"@type":"Question","name":"How do Dhule's logistics and industrial infrastructure support manufacturing growth near you?","acceptedAnswer":{"@type":"Answer","text":"With zones like Avdhan MIDC and Nardana MIDC located near the Mumbai–Agra Highway, Dhule offers exceptional connectivity for raw material procurement and finished goods distribution in your region."}},
+          {"@type":"Question","name":"Why are second-generation business families focusing on value-added manufacturing near Dhule?","acceptedAnswer":{"@type":"Answer","text":"Second-generation leaders seek to modernize legacy commodity operations, build scalable corporate structures, and create intellectual property through brand ownership in their area."}},
+          {"@type":"Question","name":"How can commodity businesses create long-term enterprise value through manufacturing near you?","acceptedAnswer":{"@type":"Answer","text":"By developing proprietary products, securing patents or formulations, and establishing a loyal consumer base, businesses shift valuation from just physical assets to powerful brand equity in your region."}}
+        ]
+      },
+      {
+        "@type":"DefinedTermSet",
+        "@id":"https://charwakcd.github.io/fmcg-business/agriculture-value-dhule/#definedterms",
+        "name":"Agricultural Value Addition & FMCG Terms",
+        "hasDefinedTerm":[
+          {"@type":"DefinedTerm","name":"Agro Processing","description":"Techniques and processes applied to agricultural raw products to transform them into intermediate or final consumer goods."},
+          {"@type":"DefinedTerm","name":"Agricultural Value Addition","description":"The process of increasing the economic value and consumer appeal of raw agricultural commodities through processing, packaging, or branding."},
+          {"@type":"DefinedTerm","name":"Commodity Trading","description":"The buying and selling of raw physical agricultural goods like unprocessed grains, cotton, or raw bulk oils, typically yielding low profit margins."},
+          {"@type":"DefinedTerm","name":"Edible Oil Processing","description":"Industrial extraction, refining, and purification of oils from seeds like groundnut, soy, or mustard into cooking oils."},
+          {"@type":"DefinedTerm","name":"Cotton Processing","description":"Ginning, pressing, and refining raw seed-cotton into lint bales and seeds optimized for textile value chains."},
+          {"@type":"DefinedTerm","name":"Dal Mill","description":"A processing facility dedicated to dehusking, splitting, and grading raw pulse crops into consumer-ready edible lentils."},
+          {"@type":"DefinedTerm","name":"Warehouse Logistics","description":"The systematic management of storing, handling, and moving bulk or packaged industrial goods within specialized storage assets."},
+          {"@type":"DefinedTerm","name":"Food Processing","description":"Transformation of agricultural raw ingredients into highly stable, packaged food items tailored for commercial retail."},
+          {"@type":"DefinedTerm","name":"Dealer Network","description":"An established regional infrastructure of B2B distributors, wholesalers, and trade partners driving physical brand placement."},
+          {"@type":"DefinedTerm","name":"Private Label Manufacturing","description":"An operational setup where a processing facility manufactures products under the brand name of a third-party retail entity."},
+          {"@type":"DefinedTerm","name":"Regional FMCG Brand","description":"Fast-Moving Consumer Goods marketed and distributed within a focused geographical territory, cultivating deep hyper-local equity."},
+          {"@type":"DefinedTerm","name":"SKU","description":"Stock Keeping Unit; a unique identification code representing a distinct product type, size, or packaging variant in inventory management."},
+          {"@type":"DefinedTerm","name":"Working Capital Cycle","description":"The operational duration required to convert net current assets and current liabilities back into accessible corporate cash flows."},
+          {"@type":"DefinedTerm","name":"Food Formulation","description":"The systematic blending and recipe standardization of raw components to ensure structural quality, taste consistency, and food safety profiles."},
+          {"@type":"DefinedTerm","name":"Brand Ownership","description":"Legal proprietary rights to trademarked intellectual property, creating sustainable intangible assets beyond generic physical inventory."},
+          {"@type":"DefinedTerm","name":"Manufacturing Capacity","description":"The peak production volume an industrial processing line can generate within a given fiscal or operational period."}
         ]
       }
     ]
@@ -238,50 +514,51 @@
   </script>
 </head>
 <body>
-  <!-- AMP Story -->
   <amp-story standalone
     title="Why Agricultural Businesses in Dhule Are Creating More Value Through Consumer Manufacturing"
     publisher="Charwak Deshpande"
-    publisher-logo-src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:96,h:96,cg:true,m/cr=w:96,h:96/qt=q:95"  
-    poster-portrait-src="https://images.pexels.com/photos/3846038/pexels-photo-3846038.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;h=1600&amp;w=1200">
-    
-    <!-- SLIDE 1 -->
+    publisher-logo-src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:96,h:96,cg:true,m/cr=w:96,h:96/qt=q:95"
+    poster-portrait-src="https://images.pexels.com/photos/3846038/pexels-photo-3846038.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1200&h=1600"
+    poster-square-src="https://images.pexels.com/photos/3846038/pexels-photo-3846038.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1200&h=1200"
+    poster-landscape-src="https://images.pexels.com/photos/3846038/pexels-photo-3846038.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1600&h=900">
+
+    <!-- ===== SLIDE 1 ===== -->
     <amp-story-page id="slide-1" auto-advance-after="6s">
       <amp-story-grid-layer template="fill">
         <amp-img layout="fill" width="1200" height="1600"
-          src="https://images.pexels.com/photos/3846038/pexels-photo-3846038.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;h=1600&amp;w=1200"
-          alt="Agricultural entrepreneur visiting a modern food manufacturing facility near Dhule."></amp-img>
+          src="https://images.pexels.com/photos/3846038/pexels-photo-3846038.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1200&h=1600"
+          alt="Agricultural entrepreneur exploring value addition opportunities near Dhule."></amp-img>
         <div class="image-overlay"></div>
       </amp-story-grid-layer>
       <amp-story-grid-layer template="vertical">
         <div class="brand-header">
-          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="60" height="40" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
+          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="36" height="36" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
           <span class="brand-name">Charwak Deshpande</span>
         </div>
         <div class="text-container">
           <div class="badge">Value Addition</div>
           <h1>Why Agricultural Businesses in Dhule Are Creating More Value Through Consumer Manufacturing</h1>
-          <h2>Agriculture Creates Supply Strength</h2>
-          <h2>Manufacturing Creates Enterprise Value</h2>
-          <p>Businesses across Dhule, Avdhan MIDC, Nardana MIDC and the wider Khandesh region have built deep expertise in agricultural commodities and logistics. Many entrepreneurs are now exploring how processing, manufacturing and consumer brands can generate higher long-term value than commodity trading alone.</p>
+          <p class="hero-sub">Agriculture Creates Supply Strength</p>
+          <p class="hero-sub">Manufacturing Creates Enterprise Value</p>
+          <p>Businesses across Dhule, Avdhan MIDC, Nardana MIDC and the wider Khandesh region have built deep expertise in agricultural commodities and logistics <strong>near you</strong>. Many entrepreneurs are now exploring how processing, manufacturing and consumer brands can generate higher long-term value than commodity trading alone <strong>in your area</strong>.</p>
+          <a class="cta-btn" href="https://api.whatsapp.com/send?phone=919112098911" target="_blank" rel="noopener">
+            Explore Growth Opportunities <span class="cta-arrow">→</span>
+          </a>
         </div>
       </amp-story-grid-layer>
-      <amp-story-page-outlink layout="nodisplay">
-        <a href="https://api.whatsapp.com/send?phone=919112098911">Explore Growth Opportunities</a>
-      </amp-story-page-outlink>
     </amp-story-page>
 
-    <!-- SLIDE 2 -->
+    <!-- ===== SLIDE 2 ===== -->
     <amp-story-page id="slide-2" auto-advance-after="6s">
       <amp-story-grid-layer template="fill">
         <amp-img layout="fill" width="1200" height="1600"
-          src="https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;h=1600&amp;w=1200"
+          src="https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1200&h=1600"
           alt="Modern agro-processing unit in Dhule district."></amp-img>
         <div class="image-overlay"></div>
       </amp-story-grid-layer>
       <amp-story-grid-layer template="vertical">
         <div class="brand-header">
-          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="60" height="40" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
+          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="36" height="36" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
           <span class="brand-name">Charwak Deshpande</span>
         </div>
         <div class="text-container">
@@ -289,22 +566,22 @@
           <h2>Dhule Has Strong Agricultural and Industrial Foundations</h2>
           <h3>Agro Processing Supports Manufacturing</h3>
           <h3>Logistics Strength Creates Expansion Opportunities</h3>
-          <p>With established agro-processing, edible oil, cotton and warehousing activities supported by industrial areas such as Avdhan MIDC and Nardana MIDC, businesses in Dhule already possess many capabilities required for value-added manufacturing.</p>
+          <p>With established agro-processing, edible oil, cotton and warehousing activities supported by industrial areas such as Avdhan MIDC and Nardana MIDC, businesses in Dhule already possess many capabilities required for value-added manufacturing <strong>near you</strong>.</p>
         </div>
       </amp-story-grid-layer>
     </amp-story-page>
 
-    <!-- SLIDE 3 -->
+    <!-- ===== SLIDE 3 ===== -->
     <amp-story-page id="slide-3" auto-advance-after="6s">
       <amp-story-grid-layer template="fill">
         <amp-img layout="fill" width="1200" height="1600"
-          src="https://images.pexels.com/photos/3846048/pexels-photo-3846048.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;h=1600&amp;w=1200"
+          src="https://images.pexels.com/photos/3846048/pexels-photo-3846048.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1200&h=1600"
           alt="Modern food packaging line."></amp-img>
         <div class="image-overlay"></div>
       </amp-story-grid-layer>
       <amp-story-grid-layer template="vertical">
         <div class="brand-header">
-          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="60" height="40" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
+          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="36" height="36" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
           <span class="brand-name">Charwak Deshpande</span>
         </div>
         <div class="text-container">
@@ -312,22 +589,22 @@
           <h2>Processing Adds More Value Than Trading Alone</h2>
           <h3>Brands Capture Customer Loyalty</h3>
           <h3>Manufacturing Improves Margin Potential</h3>
-          <p>Commodity businesses often compete on price, while manufacturers can differentiate through product quality, packaging, consistency and customer trust, creating stronger long-term enterprise value.</p>
+          <p>Commodity businesses often compete on price, while manufacturers can differentiate through product quality, packaging, consistency and customer trust, creating stronger long-term enterprise value <strong>in your area</strong>.</p>
         </div>
       </amp-story-grid-layer>
     </amp-story-page>
 
-    <!-- SLIDE 4 -->
+    <!-- ===== SLIDE 4 ===== -->
     <amp-story-page id="slide-4" auto-advance-after="7s">
       <amp-story-grid-layer template="fill">
         <amp-img layout="fill" width="1200" height="1600"
-          src="https://images.pexels.com/photos/264636/pexels-photo-264636.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;h=1600&amp;w=1200"
+          src="https://images.pexels.com/photos/264636/pexels-photo-264636.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1200&h=1600"
           alt="Regional retail shelves displaying packaged food products."></amp-img>
         <div class="image-overlay"></div>
       </amp-story-grid-layer>
       <amp-story-grid-layer template="vertical">
         <div class="brand-header">
-          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="60" height="40" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
+          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="36" height="36" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
           <span class="brand-name">Charwak Deshpande</span>
         </div>
         <div class="text-container">
@@ -335,25 +612,25 @@
           <h2>Regional Consumer Markets Continue Expanding</h2>
           <h3>Consumers Value Trusted Regional Brands</h3>
           <h3>Distribution Networks Accelerate Growth</h3>
-          <p>Businesses with regional distribution relationships can often expand more efficiently into consumer products by combining manufacturing capability with existing market access.</p>
+          <p>Businesses with regional distribution relationships can often expand more efficiently into consumer products by combining manufacturing capability with existing market access <strong>in your area</strong>.</p>
+          <a class="cta-btn" href="https://api.whatsapp.com/send?phone=919112098911" target="_blank" rel="noopener">
+            Request Business Profile <span class="cta-arrow">→</span>
+          </a>
         </div>
       </amp-story-grid-layer>
-      <amp-story-page-outlink layout="nodisplay">
-        <a href="https://api.whatsapp.com/send?phone=919112098911">Request Business Profile</a>
-      </amp-story-page-outlink>
     </amp-story-page>
 
-    <!-- SLIDE 5: Attachment -->
+    <!-- ===== SLIDE 5 (Attachment) ===== -->
     <amp-story-page id="slide-5" auto-advance-after="8s">
       <amp-story-grid-layer template="fill">
         <amp-img layout="fill" width="1200" height="1600"
-          src="https://images.pexels.com/photos/3182811/pexels-photo-3182811.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;h=1600&amp;w=1200"
+          src="https://images.pexels.com/photos/3182811/pexels-photo-3182811.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1200&h=1600"
           alt="Business strategy meeting inside manufacturing office."></amp-img>
         <div class="image-overlay"></div>
       </amp-story-grid-layer>
       <amp-story-grid-layer template="vertical">
         <div class="brand-header">
-          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="60" height="40" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
+          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="36" height="36" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
           <span class="brand-name">Charwak Deshpande</span>
         </div>
         <div class="text-container">
@@ -361,43 +638,90 @@
           <h2>Dealer Networks Can Become the Most Valuable Asset</h2>
           <h3>Relationships Take Years to Build</h3>
           <h3>Brands Multiply Distribution Value</h3>
-          <p>Factories can be developed over time, but trusted dealer relationships and recognised brands often represent the greatest competitive advantage when evaluating long-term business opportunities.</p>
+          <p>Factories can be developed over time, but trusted dealer relationships and recognised brands often represent the greatest competitive advantage when evaluating long-term business opportunities <strong>near you</strong>.</p>
         </div>
       </amp-story-grid-layer>
+      <!-- Attachment with full content + FAQ accordion -->
       <amp-story-page-attachment layout="nodisplay" theme="light">
         <div class="attachment-content">
           <h3>Consumer Brand Creation and Agricultural Value Addition</h3>
-          <p>The agricultural landscape across the Tapi Basin and Panzara River Region—spanning Dhule, Shindkheda, Sakri, and Dondaicha—has long been defined by high-volume trading of cotton, pulses, and edible oil.</p>
-          <p>However, modern logistics networks along the Mumbai–Agra Highway and dedicated infrastructure in Avdhan MIDC and Nardana MIDC have enabled a strategic shift. Second-generation entrepreneurs are leveraging legacy commodity knowledge to formulate packaged consumer foods, utilizing private label manufacturing and localized distribution networks to capture superior margins.</p>
-          
-          <hr style="border: 0; border-top: 1px solid #ccc; margin: 15px 0;">
+          <p>The agricultural landscape across the Tapi Basin and Panzara River Region—spanning Dhule, Shindkheda, Sakri, and Dondaicha—has long been defined by high-volume trading of cotton, pulses, and edible oil <strong>near you</strong>.</p>
+          <p>However, modern logistics networks along the Mumbai–Agra Highway and dedicated infrastructure in Avdhan MIDC and Nardana MIDC have enabled a strategic shift <strong>in your area</strong>. Second-generation entrepreneurs are leveraging legacy commodity knowledge to formulate packaged consumer foods, utilizing private label manufacturing and localized distribution networks to capture superior margins <strong>in your locality</strong>.</p>
+
+          <hr />
+
+          <h4>Frequently Asked Questions</h4>
+          <amp-accordion expand-single-section class="faq-accordion">
+            <section expanded>
+              <h4>Why are agricultural businesses in Dhule expanding into manufacturing near them?</h4>
+              <p>Businesses in Dhule are realizing that manufacturing and value addition provide higher, more stable margins and long-term enterprise value compared to traditional commodity trading. This shift is happening <strong>near you</strong>.</p>
+            </section>
+            <section>
+              <h4>How can edible oil businesses create more value through branded products in your area?</h4>
+              <p>By shifting from bulk trading to packaged, branded retail products, edible oil businesses can capture consumer loyalty, command premium pricing, and secure shelf space across regional markets <strong>near you</strong>.</p>
+            </section>
+            <section>
+              <h4>Why are dealer networks valuable when evaluating manufacturing businesses near Dhule?</h4>
+              <p>Manufacturing capacity can be built quickly, but established dealer networks require years of trust and relationship building, making them the most critical asset for scaling consumer brands <strong>in your area</strong>.</p>
+            </section>
+            <section>
+              <h4>What should agri entrepreneurs evaluate before entering food manufacturing near them?</h4>
+              <p>Entrepreneurs must evaluate market demand, distribution capabilities, regulatory compliance, working capital requirements, and formulation consistency before transitioning. This is essential for businesses <strong>near you</strong>.</p>
+            </section>
+            <section>
+              <h4>How does working capital influence manufacturing growth in your area?</h4>
+              <p>Working capital dictates how much inventory can be held, credit extended to distributors, and raw materials procured, acting as the primary constraint or accelerator for manufacturing scale <strong>near Dhule</strong>.</p>
+            </section>
+            <section>
+              <h4>Why is private label manufacturing becoming more attractive near Dhule?</h4>
+              <p>Private label manufacturing allows established processors to utilize excess capacity, generate consistent volume, and partner with large retailers without bearing brand-building costs <strong>in your locality</strong>.</p>
+            </section>
+            <section>
+              <h4>How long does it typically take to build a regional consumer brand near you?</h4>
+              <p>Building a recognized regional consumer brand typically requires 3 to 5 years of consistent product quality, targeted distribution, and steady market engagement <strong>in your area</strong>.</p>
+            </section>
+            <section>
+              <h4>How do Dhule's logistics and industrial infrastructure support manufacturing growth near you?</h4>
+              <p>With zones like Avdhan MIDC and Nardana MIDC located near the Mumbai–Agra Highway, Dhule offers exceptional connectivity for raw material procurement and finished goods distribution <strong>in your region</strong>.</p>
+            </section>
+            <section>
+              <h4>Why are second-generation business families focusing on value-added manufacturing near Dhule?</h4>
+              <p>Second-generation leaders seek to modernize legacy commodity operations, build scalable corporate structures, and create intellectual property through brand ownership <strong>in their area</strong>.</p>
+            </section>
+            <section>
+              <h4>How can commodity businesses create long-term enterprise value through manufacturing near you?</h4>
+              <p>By developing proprietary products, securing patents or formulations, and establishing a loyal consumer base, businesses shift valuation from just physical assets to powerful brand equity <strong>in your region</strong>.</p>
+            </section>
+          </amp-accordion>
+
+          <hr />
+
           <p><strong>About Charwak Deshpande</strong><br>
-          Charwak Deshpande brings over 30 years of expertise in commercial finance, SME advisory, business expansion, and M&amp;A strategies across North Maharashtra. For strategic evaluation of agro-processing and FMCG expansion, connect directly on WhatsApp: <strong>+91 91120 98911</strong>.</p>
-          
-          <hr style="border: 0; border-top: 1px solid #ccc; margin: 15px 0;">
-          <h4>Related Stories</h4>
+          Charwak Deshpande brings over 30 years of expertise in commercial finance, SME advisory, business expansion, and M&A strategies across North Maharashtra. For strategic evaluation of agro-processing and FMCG expansion, connect directly on WhatsApp: <strong>+91 91120 98911</strong>.</p>
+
+          <h4>Related FMCG Business Stories</h4>
           <div class="related-links">
-            <a href="https://charwakcd.github.io/fmcg-business/product-development-nashik/">FMCG Product Development in Nashik</a>
-            <a href="https://charwakcd.github.io/fmcg-business/oil-jalgaon/">Edible Oil Business Expansion in Jalgaon</a>
-            <a href="https://charwakcd.github.io/fmcg-business/industrial-growth-aurangabad/">Industrial Growth &amp; Diversification in Aurangabad</a>
-            <a href="https://charwakcd.github.io/fmcg-business/industrial-diversification-sinnar/">Manufacturing Diversification in Sinnar</a>
-            <a href="https://charwakcd.github.io/fmcg-business/dairy-engineering-ahilyanagar/">Dairy &amp; Engineering Growth in Ahilyanagar</a>
+            <a href="https://charwakcd.github.io/fmcg-business/product-development-nashik/" target="_blank" rel="noopener">FMCG Product Development in Nashik</a>
+            <a href="https://charwakcd.github.io/fmcg-business/oil-jalgaon/" target="_blank" rel="noopener">Edible Oil Business Expansion in Jalgaon</a>
+            <a href="https://charwakcd.github.io/fmcg-business/industrial-growth-aurangabad/" target="_blank" rel="noopener">Industrial Growth &amp; Diversification in Aurangabad</a>
+            <a href="https://charwakcd.github.io/fmcg-business/industrial-diversification-sinnar/" target="_blank" rel="noopener">Manufacturing Diversification in Sinnar</a>
+            <a href="https://charwakcd.github.io/fmcg-business/dairy-engineering-ahilyanagar/" target="_blank" rel="noopener">Dairy &amp; Engineering Growth in Ahilyanagar</a>
           </div>
         </div>
       </amp-story-page-attachment>
     </amp-story-page>
 
-    <!-- SLIDE 6 -->
+    <!-- ===== SLIDE 6 – IMAGE CHANGED ===== -->
     <amp-story-page id="slide-6" auto-advance-after="7s">
       <amp-story-grid-layer template="fill">
         <amp-img layout="fill" width="1200" height="1600"
-          src="https://images.pexels.com/photos/1790933/pexels-photo-1790933.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;h=1600&amp;w=1200"
+          src="https://images.pexels.com/photos/4483610/pexels-photo-4483610.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1200&h=1600"
           alt="Warehouse and logistics facility in Dhule."></amp-img>
         <div class="image-overlay"></div>
       </amp-story-grid-layer>
       <amp-story-grid-layer template="vertical">
         <div class="brand-header">
-          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="60" height="40" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
+          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="36" height="36" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
           <span class="brand-name">Charwak Deshpande</span>
         </div>
         <div class="text-container">
@@ -405,22 +729,22 @@
           <h2>Manufacturing Strength Already Exists Across Dhule</h2>
           <h3>Agro Processing Builds Operational Discipline</h3>
           <h3>Industrial Infrastructure Supports Expansion</h3>
-          <p>Existing manufacturing, warehousing and logistics capabilities across Dhule, Shirpur and Nardana create a practical foundation for businesses evaluating diversified manufacturing opportunities.</p>
+          <p>Existing manufacturing, warehousing and logistics capabilities across Dhule, Shirpur and Nardana create a practical foundation for businesses evaluating diversified manufacturing opportunities <strong>near you</strong>.</p>
         </div>
       </amp-story-grid-layer>
     </amp-story-page>
 
-    <!-- SLIDE 7 -->
+    <!-- ===== SLIDE 7 ===== -->
     <amp-story-page id="slide-7" auto-advance-after="7s">
       <amp-story-grid-layer template="fill">
         <amp-img layout="fill" width="1200" height="1600"
-          src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;h=1600&amp;w=1200"
+          src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1200&h=1600"
           alt="Business owner reviewing expansion strategy."></amp-img>
         <div class="image-overlay"></div>
       </amp-story-grid-layer>
       <amp-story-grid-layer template="vertical">
         <div class="brand-header">
-          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="60" height="40" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
+          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="36" height="36" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
           <span class="brand-name">Charwak Deshpande</span>
         </div>
         <div class="text-container">
@@ -428,25 +752,25 @@
           <h2>Successful Expansion Depends on More Than Production</h2>
           <h3>Working Capital Drives Growth</h3>
           <h3>Distribution Determines Scale</h3>
-          <p>Production capability is only one part of business expansion. Sustainable growth depends upon inventory planning, working capital management and long-term customer relationships.</p>
+          <p>Production capability is only one part of business expansion. Sustainable growth depends upon inventory planning, working capital management and long-term customer relationships <strong>in your area</strong>.</p>
+          <a class="cta-btn" href="https://api.whatsapp.com/send?phone=919112098911" target="_blank" rel="noopener">
+            Discuss Growth Options <span class="cta-arrow">→</span>
+          </a>
         </div>
       </amp-story-grid-layer>
-      <amp-story-page-outlink layout="nodisplay">
-        <a href="https://api.whatsapp.com/send?phone=919112098911">Discuss Growth Options</a>
-      </amp-story-page-outlink>
     </amp-story-page>
 
-    <!-- SLIDE 8 -->
+    <!-- ===== SLIDE 8 ===== -->
     <amp-story-page id="slide-8" auto-advance-after="7s">
       <amp-story-grid-layer template="fill">
         <amp-img layout="fill" width="1200" height="1600"
-          src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;h=1600&amp;w=1200"
+          src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1200&h=1600"
           alt="Manufacturing due diligence documents."></amp-img>
         <div class="image-overlay"></div>
       </amp-story-grid-layer>
       <amp-story-grid-layer template="vertical">
         <div class="brand-header">
-          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="60" height="40" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
+          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="36" height="36" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
           <span class="brand-name">Charwak Deshpande</span>
         </div>
         <div class="text-container">
@@ -454,16 +778,48 @@
           <h2>Questions Every Dhule Entrepreneur Should Consider</h2>
           <h3>Does The Business Have Consistent Demand?</h3>
           <h3>Can Agricultural Strength Translate Into Brand Value?</h3>
-          <p>Analyze production capacities, structure robust working capital cycles, and map localized trade routes to successfully scale up consumer operations.</p>
+          <p>Analyze production capacities, structure robust working capital cycles, and map localized trade routes to successfully scale up consumer operations <strong>near you</strong>.</p>
+          <a class="cta-btn" href="https://api.whatsapp.com/send?phone=919112098911" target="_blank" rel="noopener">
+            Get Checklist Details <span class="cta-arrow">→</span>
+          </a>
         </div>
       </amp-story-grid-layer>
-      <amp-story-page-outlink layout="nodisplay">
-        <a href="https://api.whatsapp.com/send?phone=919112098911">Get Checklist Details</a>
-      </amp-story-page-outlink>
     </amp-story-page>
 
-    <!-- Analytics -->
-    <amp-story-auto-analytics gtag-id="G-CEBH3KZSBQ"></amp-story-auto-analytics>
+    <!-- ===== ANALYTICS ===== -->
+    <amp-analytics type="gtag" data-credentials="include">
+      <script type="application/json">
+      {
+        "vars": {
+          "gtag_id": "G-CEBH3KZSBQ",
+          "config": {
+            "G-CEBH3KZSBQ": {
+              "groups": "default"
+            }
+          }
+        },
+        "triggers": {
+          "storyPageView": {
+            "on": "story-page-visible",
+            "vars": {
+              "event_name": "page_view",
+              "page_title": "${storyPageId}"
+            }
+          },
+          "ctaClick": {
+            "on": "click",
+            "selector": ".cta-btn",
+            "vars": {
+              "event_name": "click",
+              "event_category": "Outbound",
+              "event_label": "${storyPageId}"
+            }
+          }
+        }
+      }
+      </script>
+    </amp-analytics>
+
   </amp-story>
 </body>
 </html>
