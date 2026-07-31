@@ -9,6 +9,11 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
   <meta name="description" content="बारामतीचा अन्न प्रक्रिया उद्योग स्वतःचे कन्झ्युमर ब्रँड्स का उभारत आहे? शुगर, डेअरी आणि पोल्ट्री व्यवसायांचा ब्रँड मालकीकडे (Brand Ownership) होणारा प्रवास." />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+  <!-- Preload for LCP Optimization -->
+  <link rel="preload" as="image" href="https://images.pexels.com/photos/2760241/pexels-photo-2760241.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1600&w=1200" fetchpriority="high" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
@@ -26,10 +31,11 @@
   <!-- AMP runtime and story components -->
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
-  <script async custom-element="amp-story-auto-analytics" src="https://cdn.ampproject.org/v0/amp-story-auto-analytics-0.1.js"></script>
+  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+  <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
   
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Tiro+Devanagari+Marathi:ital@0;1&family=Mukta:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   
   <!-- AMP boilerplate -->
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
@@ -37,64 +43,330 @@
   
   <!-- Production CSS -->
   <style amp-custom>
-    :root{--accent:#FF6B35;--bg:#000;--muted:#f0f0f0;--white:#fff;}
-    html,body{height:100%;margin:0;background:var(--bg);font-family:'Inter',sans-serif;}
-    amp-story{color:var(--white);max-width:420px;margin:0 auto;}
-    
+    :root {
+      --accent: #FF6B35;
+      --accent-dim: #E05A2A;
+      --bg: #12161A;
+      --panel: #1B2126;
+      --paper: #F4EFE4;
+      --paper-dim: #DAD2C1;
+      --muted: #A7B0B4;
+      --white: #fff;
+      --line: rgba(244, 239, 228, 0.14);
+      --font-display: 'Tiro Devanagari Marathi', serif;
+      --font-body: 'Mukta', sans-serif;
+      --font-mono: 'Inter', monospace;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: var(--bg);
+      font-family: var(--font-body);
+    }
+
+    amp-story {
+      color: var(--white);
+      max-width: 420px;
+      margin: 0 auto;
+      font-family: var(--font-body);
+    }
+
     .image-overlay {
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: rgba(0, 0, 0, 0.6);
-        z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      background: linear-gradient(180deg, rgba(18, 22, 26, 0.05) 0%, rgba(18, 22, 26, 0.25) 45%, rgba(18, 22, 26, 0.9) 100%);
     }
 
     .text-container {
-        padding: 22px;
-        background: rgba(0, 0, 0, 0.70);
-        border-radius: 20px;
-        margin: auto 15px;
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border-top: 1px solid rgba(255, 255, 255, 0.25);
-        border-left: 1px solid rgba(255, 255, 255, 0.25);
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
-        z-index: 2;
+      padding: 24px 20px 28px;
+      margin: auto 15px 20px;
+      z-index: 2;
+      width: calc(100% - 30px);
+      max-width: 380px;
+      background: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
     }
 
-    .badge{display:inline-block;background:var(--accent);color:#fff;padding:6px 14px;border-radius:20px;font-weight:700;font-size:12px;margin-bottom:12px;text-transform:uppercase;letter-spacing:0.5px;}
-    h1{font-size:25px;line-height:1.3;margin:6px 0 10px 0;color:var(--white);font-weight:700;}
-    h2{font-size:18px;line-height:1.4;margin:6px 0 8px 0;color:var(--white);font-weight:700;}
-    h3{font-size:14px;color:var(--accent);margin:6px 0;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;}
-    p{color:var(--muted);font-size:14px;line-height:1.6;margin:10px 0 4px 0;}
-    
-    .attachment-content{background:#fff;color:#222;padding:24px;border-radius:12px;font-size:15px;line-height:1.7;}
-    
+    h1, h2, h3, p, .hero-sub, .badge {
+      text-shadow: 0 2px 16px rgba(0, 0, 0, 0.85);
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 11px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-family: var(--font-mono);
+      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    .badge em {
+      font-style: normal;
+      color: rgba(255, 255, 255, 0.75);
+      font-weight: 400;
+    }
+
+    h1 {
+      font-size: 23px;
+      line-height: 1.3;
+      margin: 4px 0 8px 0;
+      color: var(--white);
+      font-weight: 700;
+      font-family: var(--font-display);
+    }
+
+    h2 {
+      font-size: 18px;
+      line-height: 1.35;
+      margin: 4px 0 6px 0;
+      color: var(--white);
+      font-weight: 700;
+      font-family: var(--font-display);
+    }
+
+    h3 {
+      font-size: 13px;
+      color: var(--accent);
+      margin: 8px 0 4px 0;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      font-family: var(--font-mono);
+    }
+
+    h3::before {
+      content: "--- ";
+      color: var(--accent);
+    }
+
+    p {
+      color: var(--paper-dim);
+      font-size: 13px;
+      line-height: 1.65;
+      margin: 8px 0 2px 0;
+      font-family: var(--font-body);
+      max-width: 44ch;
+    }
+
+    p.hero-sub {
+      font-weight: 500;
+      color: var(--paper);
+      font-size: 14px;
+      max-width: 44ch;
+      margin-bottom: 2px;
+    }
+
     .brand-header {
-        position: absolute;
-        top: 24px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        background: rgba(0,0,0,0.5);
-        padding: 8px 16px;
-        border-radius: 30px;
-        z-index: 20;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255,255,255,0.15);
-        width: max-content;
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(0, 0, 0, 0.55);
+      padding: 6px 16px 6px 12px;
+      border-radius: 30px;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      width: max-content;
     }
-    .brand-name{color:var(--white);font-size:13px;font-weight:700;letter-spacing:0.5px;}
-    
-    ul { padding-left: 20px; margin-top: 10px; }
-    li { margin-bottom: 6px; font-size: 14px; }
-    
-    .related-links a {color: #FF6B35; font-weight: 600; text-decoration: none; display: block; margin-bottom: 8px;}
-    .related-links a:hover {text-decoration: underline;}
 
-    @media(min-width:720px){amp-story{max-width:720px;}h1{font-size:32px;}h2{font-size:22px;}}
+    .brand-name {
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      font-family: var(--font-mono);
+    }
+
+    .brand-header amp-img {
+      border-radius: 50%;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--bg);
+      padding: 10px 22px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 12px;
+      text-decoration: none;
+      font-family: var(--font-mono);
+      letter-spacing: 0.04em;
+      margin-top: 12px;
+      transition: background 0.2s ease;
+      clip-path: polygon(0 0, 100% 0, 100% 70%, 94% 100%, 0 100%);
+      text-shadow: none;
+    }
+
+    .cta-btn:hover {
+      background: var(--paper);
+    }
+
+    .cta-arrow {
+      display: inline-block;
+      transition: transform 0.2s ease;
+    }
+
+    .cta-btn:hover .cta-arrow {
+      transform: translateX(3px);
+    }
+
+    /* Attachment styles */
+    .attachment-content {
+      background: #fff;
+      color: #222;
+      padding: 24px 20px;
+      border-radius: 12px;
+      font-size: 14px;
+      line-height: 1.7;
+      font-family: var(--font-body);
+    }
+
+    .attachment-content h3 {
+      color: var(--accent-dim);
+      font-size: 16px;
+      text-transform: none;
+      letter-spacing: 0;
+      font-family: var(--font-display);
+      margin-bottom: 8px;
+      text-shadow: none;
+    }
+
+    .attachment-content h3::before {
+      content: "";
+    }
+
+    .attachment-content h4 {
+      font-size: 15px;
+      font-weight: 700;
+      margin: 14px 0 8px 0;
+      color: #1a1a1a;
+      font-family: var(--font-display);
+    }
+
+    .attachment-content p {
+      color: #3A4147;
+      font-size: 14px;
+      max-width: 100%;
+      text-shadow: none;
+    }
+
+    .attachment-content hr {
+      border: 0;
+      border-top: 1px solid #ddd;
+      margin: 16px 0;
+    }
+
+    .related-links a {
+      color: var(--accent-dim);
+      font-weight: 600;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .related-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* AMP Accordion styling */
+    .faq-accordion {
+      margin: 0;
+      background: transparent;
+    }
+    .faq-accordion section {
+      border-bottom: 1px solid #eee;
+      padding: 4px 0;
+    }
+    .faq-accordion h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 0;
+      padding: 10px 0;
+      cursor: pointer;
+      font-family: var(--font-body);
+    }
+    .faq-accordion h4::after {
+      content: " ▼";
+      font-size: 12px;
+      color: var(--accent);
+      float: right;
+    }
+    .faq-accordion section[expanded] h4::after {
+      content: " ▲";
+    }
+    .faq-accordion p {
+      font-size: 13px;
+      color: #3A4147;
+      padding: 0 0 10px 0;
+      margin: 0;
+      max-width: 100%;
+      text-shadow: none;
+    }
+
+    @media (min-width: 720px) {
+      amp-story {
+        max-width: 720px;
+      }
+      h1 {
+        font-size: 30px;
+      }
+      h2 {
+        font-size: 22px;
+      }
+      p {
+        font-size: 15px;
+      }
+      .text-container {
+        padding: 32px 26px 36px;
+        max-width: 500px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      h1 {
+        font-size: 20px;
+      }
+      h2 {
+        font-size: 16px;
+      }
+      p {
+        font-size: 12px;
+      }
+      .text-container {
+        padding: 16px 14px 20px;
+        margin: auto 10px 14px;
+      }
+      .badge {
+        font-size: 10px;
+        padding: 3px 12px;
+      }
+      h3 {
+        font-size: 11px;
+      }
+    }
   </style>
 
   <!-- Full Schema -->
@@ -120,7 +392,7 @@
       },
       {
         "@type": "Person",
-        "@id": "https://charwak.co.in/",
+        "@id": "https://charwak.co.in/#charwak-deshpande",
         "name": "Charwak Deshpande",
         "url": "https://charwak.co.in/",
         "description": "Charwak Deshpande has more than 30 years of experience in commercial finance, business strategy, international market development, SME advisory, fundraising, mergers & acquisitions (M&A), business expansion, and has evaluated more than 100 industries globally.",
@@ -149,13 +421,13 @@
         "@type":"Article",
         "@id":"https://charwakcd.github.io/fmcg-business/integrated-food-baramati/#article",
         "headline":"Why Baramati's Integrated Food Industry Is Moving Towards Consumer Brand Ownership",
-        "author":{"@id":"https://charwak.co.in/"},
+        "author":{"@id":"https://charwak.co.in/#charwak-deshpande"},
         "publisher":{"@id":"https://charwakcd.github.io/fmcg-business/integrated-food-baramati/#organization"},
         "mainEntityOfPage":{"@id":"https://charwakcd.github.io/fmcg-business/integrated-food-baramati/#webpage"},
-        "datePublished":"2026-07-20T08:00:00+05:30",
+        "datePublished":"2026-07-31T08:00:00+05:30",
         "image":{"@id":"https://charwakcd.github.io/fmcg-business/integrated-food-baramati/#primaryimage"},
         "inLanguage":"mr-IN",
-        "description":"Baramati has evolved into one of Maharashtra's strongest integrated food ecosystems. Explore why leaders in sugar, dairy, poultry, and food processing are building consumer brands.",
+        "description":"Baramati has evolved into one of Maharashtra's strongest integrated food ecosystems. Explore why leaders in sugar, dairy, poultry, and food processing are building consumer brands near you.",
         "about": [
           {"@type": "Thing", "name": "Integrated Food Industry"},
           {"@type": "Thing", "name": "Industrial Diversification"},
@@ -206,16 +478,16 @@
         "@type": "FAQPage",
         "@id": "https://charwakcd.github.io/fmcg-business/integrated-food-baramati/#faq",
         "mainEntity": [
-          {"@type": "Question","name": "Why is Baramati considered one of Maharashtra's integrated food industry hubs?","acceptedAnswer": {"@type": "Answer","text": "शेती, डेअरी, पोल्ट्री, साखर प्रक्रिया, कोल्ड चेन आणि लॉजिस्टिक्स यांच्या भक्कम जाळ्यामुळे बारामती महाराष्ट्रातील सर्वात प्रमुख एकात्मिक अन्न उद्योग केंद्र (Integrated Food Hub) बनले आहे."}},
-          {"@type": "Question","name": "How can dairy and poultry businesses diversify into consumer brands?","acceptedAnswer": {"@type": "Answer","text": "केवळ कमोडिटी सप्लाय करण्याऐवजी, प्रगत पॅकेजिंग आणि वितरणाचा वापर करून डेअरी आणि पोल्ट्री व्यवसाय स्वतःचे ग्राहकाभिमुख (Consumer-facing) ब्रँड्स तयार करू शकतात."}},
-          {"@type": "Question","name": "Why is an established dealer network often more valuable than manufacturing equipment?","acceptedAnswer": {"@type": "Answer","text": "मशिन्स काही महिन्यांत बसवता येतात, परंतु विश्वसनीय डीलर नेटवर्क आणि ग्राहकांचा विश्वास मिळवण्यासाठी अनेक वर्षे लागतात, ज्यामुळे ती व्यवसायाची सर्वात मोठी ताकद बनते."}},
-          {"@type": "Question","name": "What should entrepreneurs evaluate before acquiring a food manufacturing business?","acceptedAnswer": {"@type": "Answer","text": "अझार मॅन्युफॅक्चरिंग व्यवसाय सुरू करण्यापूर्वी बाजारातील मागणी, उत्पादन क्षमता, नियामक मान्यता, खेळते भांडवल आणि वितरण क्षमता (Distribution) याचे मूल्यांकन करणे आवश्यक आहे."}},
-          {"@type": "Question","name": "How does working capital influence food industry expansion?","acceptedAnswer": {"@type": "Answer","text": "खेळते भांडवल (Working Capital) इन्व्हेंटरी राखण्यासाठी, डीलरला क्रेडिट देण्यासाठी आणि कच्च्या मालाच्या खरेदीसाठी अत्यंत महत्त्वाचे असते, जे थेट व्यवसायाच्या विस्तारास गती देते."}},
-          {"@type": "Question","name": "Why is private label manufacturing attractive for established food processors?","acceptedAnswer": {"@type": "Answer","text": "प्रायव्हेट लेबल मॅन्युफॅक्चरिंगमुळे उत्पादकांना त्यांच्या अतिरिक्त क्षमतेचा (Excess Capacity) वापर करता येतो आणि ब्रँडिंगचा खर्च न करता मोठ्या रिटेलर्ससोबत व्यवसाय करता येतो."}},
-          {"@type": "Question","name": "How long does it take to build a successful regional FMCG brand?","acceptedAnswer": {"@type": "Answer","text": "उत्पादनाचा सातत्यपूर्ण दर्जा, अचूक वितरण आणि बाजारातील सहभागाच्या माध्यमातून एक यशस्वी प्रादेशिक ब्रँड उभारण्यासाठी साधारणपणे ३ ते ५ वर्षे लागतात."}},
-          {"@type": "Question","name": "What competitive advantages does Baramati offer for integrated food manufacturing?","acceptedAnswer": {"@type": "Answer","text": "बारामती एमआयडीसी, शारदानगर आणि कुरकुंभ इंडस्ट्रियल कनेक्टिव्हिटीमुळे येथे कच्चा माल, प्रशिक्षित मनुष्यबळ आणि अत्याधुनिक पॅकेजिंग व लॉजिस्टिक्स सुविधा सहज उपलब्ध होतात."}},
-          {"@type": "Question","name": "Why are second-generation entrepreneurs exploring consumer brand ownership?","acceptedAnswer": {"@type": "Answer","text": "दुसऱ्या पिढीतील उद्योजक पारंपरिक व्यवसायांना आधुनिक रूप देऊन, केवळ पुरवठादार न राहता ग्राहकांशी थेट नाते जोडणारे ब्रँड्स तयार करत आहेत, ज्यामुळे एंटरप्राइज व्हॅल्यू वाढते."}},
-          {"@type": "Question","name": "How can integrated food manufacturing create long-term enterprise value?","acceptedAnswer": {"@type": "Answer","text": "ऑपरेशनल एक्सलन्स, दर्जेदार उत्पादने आणि स्वतःच्या ब्रँडद्वारे निर्माण झालेली ग्राहकांची निष्ठा व्यवसायाचे दीर्घकालीन एंटरप्राइज व्हॅल्यू (Enterprise Value) मोठ्या प्रमाणात वाढवते."}}
+          {"@type": "Question","name": "Why is Baramati considered one of Maharashtra's integrated food industry hubs near me?","acceptedAnswer": {"@type": "Answer","text": "शेती, डेअरी, पोल्ट्री, साखर प्रक्रिया, कोल्ड चेन आणि लॉजिस्टिक्स यांच्या भक्कम जाळ्यामुळे बारामती महाराष्ट्रातील सर्वात प्रमुख एकात्मिक अन्न उद्योग केंद्र (Integrated Food Hub) बनले आहे."}},
+          {"@type": "Question","name": "How can dairy and poultry businesses in Baramati diversify into consumer brands?","acceptedAnswer": {"@type": "Answer","text": "केवळ कमोडिटी सप्लाय करण्याऐवजी, प्रगत पॅकेजिंग आणि वितरणाचा वापर करून डेअरी आणि पोल्ट्री व्यवसाय स्वतःचे ग्राहकाभिमुख (Consumer-facing) ब्रँड्स तयार करू शकतात."}},
+          {"@type": "Question","name": "Why is an established dealer network near Baramati often more valuable than manufacturing equipment?","acceptedAnswer": {"@type": "Answer","text": "मशिन्स काही महिन्यांत बसवता येतात, परंतु विश्वसनीय डीलर नेटवर्क आणि ग्राहकांचा विश्वास कमवण्यासाठी अनेक वर्षे लागतात, ज्यामुळे ती व्यवसायाची सर्वात मोठी ताकद बनते."}},
+          {"@type": "Question","name": "What should entrepreneurs evaluate before acquiring a food manufacturing business in Baramati?","acceptedAnswer": {"@type": "Answer","text": "अझार मॅन्युफॅक्चरिंग व्यवसाय सुरू करण्यापूर्वी बाजारातील मागणी, उत्पादन क्षमता, नियामक मान्यता, खेळते भांडवल आणि वितरण क्षमता (Distribution) याचे मूल्यांकन करणे आवश्यक आहे."}},
+          {"@type": "Question","name": "How does working capital influence food industry expansion near Baramati?","acceptedAnswer": {"@type": "Answer","text": "खेळते भांडवल (Working Capital) इन्व्हेंटरी राखण्यासाठी, डीलरला क्रेडिट देण्यासाठी आणि कच्च्या मालाच्या खरेदीसाठी अत्यंत महत्त्वाचे असते, जे थेट व्यवसायाच्या विस्तारास गती देते."}},
+          {"@type": "Question","name": "Why is private label manufacturing attractive for established food processors in your area?","acceptedAnswer": {"@type": "Answer","text": "प्रायव्हेट लेबल मॅन्युफॅक्चरिंगमुळे उत्पादकांना त्यांच्या अतिरिक्त क्षमतेचा (Excess Capacity) वापर करता येतो आणि ब्रँडिंगचा खर्च न करता मोठ्या रिटेलर्ससोबत व्यवसाय करता येतो."}},
+          {"@type": "Question","name": "How long does it take to build a successful regional FMCG brand near Baramati?","acceptedAnswer": {"@type": "Answer","text": "उत्पादनाचा सातत्यपूर्ण दर्जा, अचूक वितरण आणि बाजारातील सहभागाच्या माध्यमातून एक यशस्वी प्रादेशिक ब्रँड उभारण्यासाठी साधारणपणे ३ ते ५ वर्षे लागतात."}},
+          {"@type": "Question","name": "What competitive advantages does Baramati offer for integrated food manufacturing in your locality?","acceptedAnswer": {"@type": "Answer","text": "बारामती एमआयडीसी, शारदानगर आणि कुरकुंभ इंडस्ट्रियल कनेक्टिव्हिटीमुळे येथे कच्चा माल, प्रशिक्षित मनुष्यबळ आणि अत्याधुनिक पॅकेजिंग व लॉजिस्टिक्स सुविधा सहज उपलब्ध होतात."}},
+          {"@type": "Question","name": "Why are second-generation entrepreneurs near Baramati exploring consumer brand ownership?","acceptedAnswer": {"@type": "Answer","text": "दुसऱ्या पिढीतील उद्योजक पारंपरिक व्यवसायांना आधुनिक रूप देऊन, केवळ पुरवठादार न राहता ग्राहकांशी थेट नाते जोडणारे ब्रँड्स तयार करत आहेत, ज्यामुळे एंटरप्राइज व्हॅल्यू वाढते."}},
+          {"@type": "Question","name": "How can integrated food manufacturing create long-term enterprise value in Baramati?","acceptedAnswer": {"@type": "Answer","text": "ऑपरेशनल एक्सलन्स, दर्जेदार उत्पादने आणि स्वतःच्या ब्रँडद्वारे निर्माण झालेली ग्राहकांची निष्ठा व्यवसायाचे दीर्घकालीन एंटरप्राइज व्हॅल्यू (Enterprise Value) मोठ्या प्रमाणात वाढवते."}}
         ]
       },
       {
@@ -241,12 +513,14 @@
 <body>
   <!-- AMP Story -->
   <amp-story standalone
-    title="Why Baramati's Food Industry Leaders Are Building Consumer Brands Beyond Traditional Agriculture"
+    title="बारामतीतील एकात्मिक अन्न उद्योग | शेतीपलीकडे जाऊन ग्राहक ब्रँड्सची उभारणी"
     publisher="Charwak Deshpande"
     publisher-logo-src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:96,h:96,cg:true,m/cr=w:96,h:96/qt=q:95"  
-    poster-portrait-src="https://images.pexels.com/photos/2760241/pexels-photo-2760241.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1600&w=1200">
+    poster-portrait-src="https://images.pexels.com/photos/2760241/pexels-photo-2760241.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1600&w=1200"
+    poster-square-src="https://images.pexels.com/photos/2760241/pexels-photo-2760241.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=1200"
+    poster-landscape-src="https://images.pexels.com/photos/2760241/pexels-photo-2760241.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1600&h=900">
     
-    <!-- SLIDE 1 -->
+    <!-- ===== SLIDE 1 ===== -->
     <amp-story-page id="slide-1" auto-advance-after="6s">
       <amp-story-grid-layer template="fill">
         <amp-img layout="fill" width="1200" height="1600"
@@ -256,23 +530,23 @@
       </amp-story-grid-layer>
       <amp-story-grid-layer template="vertical">
         <div class="brand-header">
-          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="60" height="40" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
+          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="36" height="36" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
           <span class="brand-name">Charwak Deshpande</span>
         </div>
         <div class="text-container">
           <div class="badge">Brand Ownership</div>
           <h1>बारामतीचा अन्न प्रक्रिया उद्योग स्वतःचे कन्झ्युमर ब्रँड्स का उभारत आहे?</h1>
-          <h2>औद्योगिक फूड इकोसिस्टम्स नवीन संधी निर्माण करतात</h2>
-          <h2>कन्झ्युमर ब्रँड्स दीर्घकालीन मूल्य (Enterprise Value) निर्माण करतात</h2>
-          <p>बारामती एमआयडीसी (Baramati MIDC), शारदानगर आणि परिसरातील औद्योगिक पट्ट्याने अन्न प्रक्रिया, डेअरी, पोल्ट्री आणि साखर उत्पादनात मोठी झेप घेतली आहे. अब येथील उद्योजक केवळ पुरवठादार न राहता, स्वतःचे प्रादेशिक ब्रँड्स तयार करून ग्राहकांपर्यंत पोहोचण्याचा विचार करत आहेत.</p>
+          <p class="hero-sub">औद्योगिक फूड इकोसिस्टम्स नवीन संधी निर्माण करतात</p>
+          <p class="hero-sub">कन्झ्युमर ब्रँड्स दीर्घकालीन मूल्य (Enterprise Value) निर्माण करतात</p>
+          <p>बारामती एमआयडीसी (Baramati MIDC), शारदानगर आणि परिसरातील औद्योगिक पट्ट्याने अन्न प्रक्रिया, डेअरी, पोल्ट्री आणि साखर उत्पादनात मोठी झेप घेतली आहे. आता येथील उद्योजक केवळ पुरवठादार न राहता, स्वतःचे प्रादेशिक ब्रँड्स तयार करून ग्राहकांपर्यंत पोहोचण्याचा विचार करत आहेत.</p>
+          <a class="cta-btn" href="https://api.whatsapp.com/send?phone=919112098911" target="_blank" rel="noopener">
+            व्यवसाय विस्ताराबद्दल अधिक <span class="cta-arrow">→</span>
+          </a>
         </div>
       </amp-story-grid-layer>
-      <amp-story-page-outlink layout="nodisplay">
-        <a href="https://api.whatsapp.com/send?phone=919112098911">Explore Business Expansion</a>
-      </amp-story-page-outlink>
     </amp-story-page>
 
-    <!-- SLIDE 2 -->
+    <!-- ===== SLIDE 2 ===== -->
     <amp-story-page id="slide-2" auto-advance-after="6s">
       <amp-story-grid-layer template="fill">
         <amp-img layout="fill" width="1200" height="1600"
@@ -282,20 +556,20 @@
       </amp-story-grid-layer>
       <amp-story-grid-layer template="vertical">
         <div class="brand-header">
-          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="60" height="40" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
+          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="36" height="36" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
           <span class="brand-name">Charwak Deshpande</span>
         </div>
         <div class="text-container">
           <div class="badge">Integrated Hub</div>
           <h2>बारामती बनले आहे महाराष्ट्राचे एकात्मिक अन्न उत्पादन केंद्र</h2>
           <h3>अन्न प्रक्रियेसाठी भक्कम पायाभूत सुविधा आधीपासूनच उपलब्ध</h3>
-          <h3>मजूबत पुरवठा साखळी (Supply Chain) व्यवसायाच्या वाढीस पूरक</h3>
+          <h3>मजबूत पुरवठा साखळी (Supply Chain) व्यवसायाच्या वाढीस पूरक</h3>
           <p>शेती, डेअरी, पोल्ट्री, साखर प्रक्रिया, पॅकेजिंग आणि लॉजिस्टिक्स यांची सांगड घालत, बारामती औद्योगिक वसाहत (Baramati Industrial Area) महाराष्ट्रातील सर्वात भक्कम फूड क्लस्टर बनली आहे, जिथे डायव्हर्सिफाईड मॅन्युफॅक्चरिंगसाठी अनेक नवीन संधी उपलब्ध आहेत.</p>
         </div>
       </amp-story-grid-layer>
     </amp-story-page>
 
-    <!-- SLIDE 3 -->
+    <!-- ===== SLIDE 3 ===== -->
     <amp-story-page id="slide-3" auto-advance-after="6s">
       <amp-story-grid-layer template="fill">
         <amp-img layout="fill" width="1200" height="1600"
@@ -305,7 +579,7 @@
       </amp-story-grid-layer>
       <amp-story-grid-layer template="vertical">
         <div class="brand-header">
-          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="60" height="40" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
+          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="36" height="36" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
           <span class="brand-name">Charwak Deshpande</span>
         </div>
         <div class="text-container">
@@ -318,7 +592,7 @@
       </amp-story-grid-layer>
     </amp-story-page>
 
-    <!-- SLIDE 4 -->
+    <!-- ===== SLIDE 4 ===== -->
     <amp-story-page id="slide-4" auto-advance-after="7s">
       <amp-story-grid-layer template="fill">
         <amp-img layout="fill" width="1200" height="1600"
@@ -328,7 +602,7 @@
       </amp-story-grid-layer>
       <amp-story-grid-layer template="vertical">
         <div class="brand-header">
-          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="60" height="40" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
+          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="36" height="36" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
           <span class="brand-name">Charwak Deshpande</span>
         </div>
         <div class="text-container">
@@ -337,14 +611,14 @@
           <h3>स्थापित वितरण व्यवस्था (Distribution) जलद वाढीस मदत करते</h3>
           <h3>ब्रँडची मालकी एंटरप्राइज व्हॅल्यू (Enterprise Value) वाढवते</h3>
           <p>केवळ कच्चा माल किंवा घटक पुरवणे हा एक व्यवसाय आहे. पण स्वतःचा कन्झ्युमर ब्रँड असणे हा पूर्णपणे वेगळा व्यवसाय आहे. स्थापित वितरण व्यवस्था आणि विश्वासार्ह ब्रँड्स उत्पादनापलीकडे जाऊन शाश्वत मूल्य निर्माण करतात.</p>
+          <a class="cta-btn" href="https://api.whatsapp.com/send?phone=919112098911" target="_blank" rel="noopener">
+            व्यवसाय प्रोफाइल मागवा <span class="cta-arrow">→</span>
+          </a>
         </div>
       </amp-story-grid-layer>
-      <amp-story-page-outlink layout="nodisplay">
-        <a href="https://api.whatsapp.com/send?phone=919112098911">Request Business Profile</a>
-      </amp-story-page-outlink>
     </amp-story-page>
 
-    <!-- SLIDE 5: Attachment -->
+    <!-- ===== SLIDE 5: Attachment ===== -->
     <amp-story-page id="slide-5" auto-advance-after="8s">
       <amp-story-grid-layer template="fill">
         <amp-img layout="fill" width="1200" height="1600"
@@ -354,7 +628,7 @@
       </amp-story-grid-layer>
       <amp-story-grid-layer template="vertical">
         <div class="brand-header">
-          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="60" height="40" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
+          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="36" height="36" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
           <span class="brand-name">Charwak Deshpande</span>
         </div>
         <div class="text-container">
@@ -371,12 +645,58 @@
           <p>पुणे जिल्ह्यात (Pune District) बारामती एमआयडीसी (Baramati MIDC), माळेगाव एमआयडीसी (Malegaon MIDC), आणि नीरा (Nira) परिसरातील औद्योगिक पट्टा हा नेहमीच साखर, डेअरी आणि पोल्ट्री उत्पादनांसाठी ओळखला जातो. कुरकुंभ इंडस्ट्रियल कनेक्टिव्हिटी (Kurkumbh Industrial Connectivity) आणि भिगवण रोड (Bhigwan Road) वरील लॉजिस्टिक्स नेटवर्कमुळे याला मोठी गती मिळाली आहे.</p>
           <p>आता येथील उद्योजक या सुविधांचा वापर करून स्वतःचे पॅकेज्ड फूड ब्रँड्स बाजारात आणत आहेत. कोल्ड चेन आणि पॅकेजिंगच्या भक्कम पाठींब्यामुळे, केवळ पुरवठ्यावर अवलंबून न राहता ग्राहकांशी थेट नाते जोडणारे ब्रँड्स तयार करण्याकडे त्यांचा कल वाढत आहे.</p>
           
-          <hr style="border: 0; border-top: 1px solid #ccc; margin: 15px 0;">
+          <hr />
+
+          <h4>वारंवार विचारले जाणारे प्रश्न</h4>
+          <amp-accordion expand-single-section class="faq-accordion">
+            <section expanded>
+              <h4>बारामतीला एकात्मिक अन्न उद्योग केंद्र का मानले जाते?</h4>
+              <p>शेती, डेअरी, पोल्ट्री, साखर प्रक्रिया, कोल्ड चेन आणि लॉजिस्टिक्स यांच्या भक्कम जाळ्यामुळे बारामती महाराष्ट्रातील सर्वात प्रमुख एकात्मिक अन्न उद्योग केंद्र (Integrated Food Hub) बनले आहे.</p>
+            </section>
+            <section>
+              <h4>बारामतीतील डेअरी आणि पोल्ट्री व्यवसाय कन्झ्युमर ब्रँड्समध्ये विविधता कशी आणू शकतात?</h4>
+              <p>केवळ कमोडिटी सप्लाय करण्याऐवजी, प्रगत पॅकेजिंग आणि वितरणाचा वापर करून डेअरी आणि पोल्ट्री व्यवसाय स्वतःचे ग्राहकाभिमुख (Consumer-facing) ब्रँड्स तयार करू शकतात.</p>
+            </section>
+            <section>
+              <h4>बारामतीजवळ स्थापित डीलर नेटवर्क हे उत्पादन यंत्रणेपेक्षा अधिक मौल्यवान का आहे?</h4>
+              <p>मशिन्स काही महिन्यांत बसवता येतात, परंतु विश्वसनीय डीलर नेटवर्क आणि ग्राहकांचा विश्वास कमवण्यासाठी अनेक वर्षे लागतात, ज्यामुळे ती व्यवसायाची सर्वात मोठी ताकद बनते.</p>
+            </section>
+            <section>
+              <h4>बारामतीमध्ये अन्न उत्पादन व्यवसाय सुरू करण्यापूर्वी काय मूल्यांकन करावे?</h4>
+              <p>अझार मॅन्युफॅक्चरिंग व्यवसाय सुरू करण्यापूर्वी बाजारातील मागणी, उत्पादन क्षमता, नियामक मान्यता, खेळते भांडवल आणि वितरण क्षमता (Distribution) याचे मूल्यांकन करणे आवश्यक आहे.</p>
+            </section>
+            <section>
+              <h4>बारामतीत अन्न उद्योगाच्या विस्तारावर खेळत्या भांडवलाचा काय परिणाम होतो?</h4>
+              <p>खेळते भांडवल (Working Capital) इन्व्हेंटरी राखण्यासाठी, डीलरला क्रेडिट देण्यासाठी आणि कच्च्या मालाच्या खरेदीसाठी अत्यंत महत्त्वाचे असते, जे थेट व्यवसायाच्या विस्तारास गती देते.</p>
+            </section>
+            <section>
+              <h4>स्थापित अन्न उत्पादकांसाठी प्रायव्हेट लेबल मॅन्युफॅक्चरिंग का आकर्षक आहे?</h4>
+              <p>प्रायव्हेट लेबल मॅन्युफॅक्चरिंगमुळे उत्पादकांना त्यांच्या अतिरिक्त क्षमतेचा (Excess Capacity) वापर करता येतो आणि ब्रँडिंगचा खर्च न करता मोठ्या रिटेलर्ससोबत व्यवसाय करता येतो.</p>
+            </section>
+            <section>
+              <h4>बारामतीजवळ यशस्वी प्रादेशिक FMCG ब्रँड उभारण्यासाठी किती वेळ लागतो?</h4>
+              <p>उत्पादनाचा सातत्यपूर्ण दर्जा, अचूक वितरण आणि बाजारातील सहभागाच्या माध्यमातून एक यशस्वी प्रादेशिक ब्रँड उभारण्यासाठी साधारणपणे ३ ते ५ वर्षे लागतात.</p>
+            </section>
+            <section>
+              <h4>बारामती एकात्मिक अन्न उत्पादनासाठी कोणते स्पर्धात्मक फायदे देते?</h4>
+              <p>बारामती एमआयडीसी, शारदानगर आणि कुरकुंभ इंडस्ट्रियल कनेक्टिव्हिटीमुळे येथे कच्चा माल, प्रशिक्षित मनुष्यबळ आणि अत्याधुनिक पॅकेजिंग व लॉजिस्टिक्स सुविधा सहज उपलब्ध होतात.</p>
+            </section>
+            <section>
+              <h4>बारामतीजवळील दुसऱ्या पिढीतील उद्योजक कन्झ्युमर ब्रँड मालकी का शोधत आहेत?</h4>
+              <p>दुसऱ्या पिढीतील उद्योजक पारंपरिक व्यवसायांना आधुनिक रूप देऊन, केवळ पुरवठादार न राहता ग्राहकांशी थेट नाते जोडणारे ब्रँड्स तयार करत आहेत, ज्यामुळे एंटरप्राइज व्हॅल्यू वाढते.</p>
+            </section>
+            <section>
+              <h4>बारामतीत एकात्मिक अन्न उत्पादन दीर्घकालीन एंटरप्राइज व्हॅल्यू कसे निर्माण करू शकते?</h4>
+              <p>ऑपरेशनल एक्सलन्स, दर्जेदार उत्पादने आणि स्वतःच्या ब्रँडद्वारे निर्माण झालेली ग्राहकांची निष्ठा व्यवसायाचे दीर्घकालीन एंटरप्राइज व्हॅल्यू (Enterprise Value) मोठ्या प्रमाणात वाढवते.</p>
+            </section>
+          </amp-accordion>
+
+          <hr />
+
           <p><strong>About Charwak Deshpande</strong><br>
           Charwak Deshpande brings over 30 years of expertise in commercial finance, SME advisory, business expansion, and M&A strategies across Maharashtra's industrial belts. For strategic evaluation of agro-processing and FMCG expansion, connect directly on WhatsApp: <strong>+91 91120 98911</strong>.</p>
           
-          <hr style="border: 0; border-top: 1px solid #ccc; margin: 15px 0;">
-          <h4>Related Stories</h4>
+          <h4>संबंधित कथा</h4>
           <div class="related-links">
             <a href="https://charwakcd.github.io/fmcg-business/oil-jalgaon/">Edible Oil Business Expansion in Jalgaon</a>
             <a href="https://charwakcd.github.io/fmcg-business/dairy-engineering-ahilyanagar/">Dairy & Engineering Growth in Ahilyanagar</a>
@@ -389,7 +709,7 @@
       </amp-story-page-attachment>
     </amp-story-page>
 
-    <!-- SLIDE 6 -->
+    <!-- ===== SLIDE 6 ===== -->
     <amp-story-page id="slide-6" auto-advance-after="7s">
       <amp-story-grid-layer template="fill">
         <amp-img layout="fill" width="1200" height="1600"
@@ -399,7 +719,7 @@
       </amp-story-grid-layer>
       <amp-story-grid-layer template="vertical">
         <div class="brand-header">
-          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="60" height="40" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
+          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="36" height="36" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
           <span class="brand-name">Charwak Deshpande</span>
         </div>
         <div class="text-container">
@@ -412,7 +732,7 @@
       </amp-story-grid-layer>
     </amp-story-page>
 
-    <!-- SLIDE 7 -->
+    <!-- ===== SLIDE 7 ===== -->
     <amp-story-page id="slide-7" auto-advance-after="7s">
       <amp-story-grid-layer template="fill">
         <amp-img layout="fill" width="1200" height="1600"
@@ -422,7 +742,7 @@
       </amp-story-grid-layer>
       <amp-story-grid-layer template="vertical">
         <div class="brand-header">
-          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="60" height="40" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
+          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="36" height="36" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
           <span class="brand-name">Charwak Deshpande</span>
         </div>
         <div class="text-container">
@@ -431,14 +751,14 @@
           <h3>खेळते भांडवल (Working Capital) विस्तारास गती देते</h3>
           <h3>वितरण व्यवस्था (Distribution Networks) शाश्वत वाढ घडवून आणते</h3>
           <p>यशस्वी व्यवसाय उत्पादन क्षमता, ग्राहकांशी संबंध, इन्व्हेंटरी मॅनेजमेंट आणि आर्थिक शिस्त यांचा योग्य समतोल राखतात. इंदापूर रोड (Indapur Road) आणि परिसरातील शाश्वत विस्तार याच घटकांवर अवलंबून आहे.</p>
+          <a class="cta-btn" href="https://api.whatsapp.com/send?phone=919112098911" target="_blank" rel="noopener">
+            विकास संधींबद्दल चर्चा करा <span class="cta-arrow">→</span>
+          </a>
         </div>
       </amp-story-grid-layer>
-      <amp-story-page-outlink layout="nodisplay">
-        <a href="https://api.whatsapp.com/send?phone=919112098911">Discuss Growth Opportunities</a>
-      </amp-story-page-outlink>
     </amp-story-page>
 
-    <!-- SLIDE 8 -->
+    <!-- ===== SLIDE 8 ===== -->
     <amp-story-page id="slide-8" auto-advance-after="7s">
       <amp-story-grid-layer template="fill">
         <amp-img layout="fill" width="1200" height="1600"
@@ -448,7 +768,7 @@
       </amp-story-grid-layer>
       <amp-story-grid-layer template="vertical">
         <div class="brand-header">
-          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="60" height="40" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
+          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="36" height="36" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
           <span class="brand-name">Charwak Deshpande</span>
         </div>
         <div class="text-container">
@@ -461,7 +781,7 @@
       </amp-story-grid-layer>
     </amp-story-page>
 
-    <!-- SLIDE 9 -->
+    <!-- ===== SLIDE 9 ===== -->
     <amp-story-page id="slide-9" auto-advance-after="7s">
       <amp-story-grid-layer template="fill">
         <amp-img layout="fill" width="1200" height="1600"
@@ -471,7 +791,7 @@
       </amp-story-grid-layer>
       <amp-story-grid-layer template="vertical">
         <div class="brand-header">
-          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="60" height="40" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
+          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="36" height="36" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
           <span class="brand-name">Charwak Deshpande</span>
         </div>
         <div class="text-container">
@@ -484,7 +804,7 @@
       </amp-story-grid-layer>
     </amp-story-page>
 
-    <!-- SLIDE 10 -->
+    <!-- ===== SLIDE 10 ===== -->
     <amp-story-page id="slide-10" auto-advance-after="7s">
       <amp-story-grid-layer template="fill">
         <amp-img layout="fill" width="1200" height="1600"
@@ -494,7 +814,7 @@
       </amp-story-grid-layer>
       <amp-story-grid-layer template="vertical">
         <div class="brand-header">
-          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="60" height="40" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
+          <amp-img src="https://img1.wsimg.com/isteam/ip/97a87c93-346c-4ff0-a383-de326f1fc3fb/Charwak%20Logo.png/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100/qt=q:95" width="36" height="36" layout="fixed" alt="Charwak Deshpande Brand Logo"></amp-img>
           <span class="brand-name">Charwak Deshpande</span>
         </div>
         <div class="text-container">
@@ -503,15 +823,47 @@
           <h3>ऑपरेशनल एक्सलन्स मजबूत पाया रचते</h3>
           <h3>ग्राहकांशी जोडलेली नाती एंटरप्राइज व्हॅल्यू तयार करतात</h3>
           <p>बारामतीतील व्यवसायांनी उत्पादन क्षेत्रात आधीच आपले वर्चस्व सिद्ध केले आहे. भविष्यातील वाटचाल ही मॅन्युफॅक्चरिंग क्षमतेला स्वतःचे ब्रँड्स आणि भक्कम डीलर नेटवर्कची जोड देण्यावर अवलंबून असेल.</p>
+          <a class="cta-btn" href="https://api.whatsapp.com/send?phone=919112098911" target="_blank" rel="noopener">
+            WhatsApp वर संपर्क करा <span class="cta-arrow">→</span>
+          </a>
         </div>
       </amp-story-grid-layer>
-      <amp-story-page-outlink layout="nodisplay">
-        <a href="https://api.whatsapp.com/send?phone=919112098911">Connect on WhatsApp</a>
-      </amp-story-page-outlink>
     </amp-story-page>
 
-    <!-- Analytics -->
-    <amp-story-auto-analytics gtag-id="G-CEBH3KZSBQ"></amp-story-auto-analytics>
+    <!-- ===== ANALYTICS (GA4 with gtag) ===== -->
+    <amp-analytics type="gtag" data-credentials="include">
+      <script type="application/json">
+      {
+        "vars": {
+          "gtag_id": "G-CEBH3KZSBQ",
+          "config": {
+            "G-CEBH3KZSBQ": {
+              "groups": "default"
+            }
+          }
+        },
+        "triggers": {
+          "storyPageView": {
+            "on": "story-page-visible",
+            "vars": {
+              "event_name": "page_view",
+              "page_title": "${storyPageId}"
+            }
+          },
+          "ctaClick": {
+            "on": "click",
+            "selector": ".cta-btn",
+            "vars": {
+              "event_name": "click",
+              "event_category": "Outbound",
+              "event_label": "${storyPageId}"
+            }
+          }
+        }
+      }
+      </script>
+    </amp-analytics>
+
   </amp-story>
 </body>
 </html>
