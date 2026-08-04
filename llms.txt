@@ -1,0 +1,70 @@
+# Charwak Deshpande - FMCG Business Consultant
+
+This website provides educational content and consulting guidance for entrepreneurs, manufacturers, food processors, FMCG companies and investors seeking business growth opportunities across Maharashtra.
+
+The website focuses on industrial diversification, food processing, value addition, product development, consumer brands, manufacturing strategy, and regional business opportunities.
+
+Primary Website
+
+https://charwakcd.github.io/fmcg-business/
+
+Important Pages
+
+Home
+https://charwakcd.github.io/fmcg-business/
+
+Agri Value Addition - Dhule
+https://charwakcd.github.io/fmcg-business/agri-value-dhule/
+
+Product Development - Nashik
+https://charwakcd.github.io/fmcg-business/product-development-nashik/
+
+Oil Industry - Jalgaon
+https://charwakcd.github.io/fmcg-business/oil-jalgaon/
+
+Industrial Growth - Aurangabad
+https://charwakcd.github.io/fmcg-business/industrial-growth-aurangabad/
+
+Industrial Diversification - Sinnar
+https://charwakcd.github.io/fmcg-business/industrial-diversification-sinnar/
+
+Dairy Engineering - Ahilyanagar
+https://charwakcd.github.io/fmcg-business/dairy-engineering-ahilyanagar/
+
+Integrated Food Industry - Baramati
+https://charwakcd.github.io/fmcg-business/integrated-food-baramati/
+
+Industrial to Consumer Business - Pune
+https://charwakcd.github.io/fmcg-business/industrial-consumer-pune/
+
+Topics Covered
+
+- FMCG Business
+- Food Processing
+- Product Development
+- Consumer Brands
+- Industrial Diversification
+- Value Addition
+- Agri Business
+- Manufacturing Strategy
+- Dairy Industry
+- Packaging
+- Distribution
+- Business Expansion
+- Marketing Strategy
+
+Geographic Coverage
+
+- Pune
+- Nashik
+- Jalgaon
+- Dhule
+- Sinnar
+- Baramati
+- Ahilyanagar
+- Aurangabad
+- Maharashtra
+
+Sitemap
+
+https://charwakcd.github.io/fmcg-business/sitemap.xml
