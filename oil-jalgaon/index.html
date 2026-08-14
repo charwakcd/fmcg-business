@@ -15,6 +15,9 @@
   <link rel="preload" as="image" href="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=1200&q=95" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Additional preconnects for performance -->
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  <link rel="dns-prefetch" href="https://images.unsplash.com" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
@@ -84,6 +87,7 @@
       background: linear-gradient(180deg, rgba(18, 22, 26, 0.05) 0%, rgba(18, 22, 26, 0.25) 45%, rgba(18, 22, 26, 0.9) 100%);
     }
 
+    /* Original .text-container – we keep it, but we'll override with a more specific rule below */
     .text-container {
       padding: 24px 20px 28px;
       margin: auto 15px 20px;
@@ -96,6 +100,16 @@
       border: none;
       border-radius: 0;
       box-shadow: none;
+    }
+
+    /* ---- ENHANCED GLASS EFFECT (overrides above) ---- */
+    amp-story-page .text-container {
+      background: rgba(0, 0, 0, 0.35) !important;
+      backdrop-filter: blur(6px) !important;
+      -webkit-backdrop-filter: blur(6px) !important;
+      border: 1px solid rgba(255, 255, 255, 0.06) !important;
+      border-radius: 14px !important;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25) !important;
     }
 
     h1, h2, h3, p, .hero-sub, .badge {
@@ -215,13 +229,14 @@
       font-family: var(--font-mono);
       letter-spacing: 0.04em;
       margin-top: 12px;
-      transition: background 0.2s ease;
+      transition: background 0.2s ease, transform 0.2s ease;
       clip-path: polygon(0 0, 100% 0, 100% 70%, 94% 100%, 0 100%);
       text-shadow: none;
     }
 
     .cta-btn:hover {
       background: var(--paper);
+      transform: translateY(-1px);
     }
 
     .cta-arrow {
@@ -409,7 +424,7 @@
     }
   </style>
 
-  <!-- Full Schema -->
+  <!-- Full Schema (original + appended HowTo and Place) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -654,6 +669,71 @@
           { "@type": "DefinedTerm", "name": "FMCG", "description": "Fast-Moving Consumer Goods; products that sell quickly at relatively low cost, including packaged foods and beverages." },
           { "@type": "DefinedTerm", "name": "Private Label", "description": "Products manufactured by one company and sold under another company's brand name." }
         ]
+      },
+      /* ---- ADDED: HowTo Schema ---- */
+      {
+        "@type": "HowTo",
+        "@id": "https://charwakcd.github.io/fmcg-business/oil-jalgaon/#howto",
+        "name": "How to Diversify from Oil Commodity Trading to Packaged Foods in Jalgaon",
+        "description": "A strategic guide for oil traders and mill owners in Jalgaon looking to move into branded packaged food manufacturing.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "Assess Your Core Capabilities",
+            "text": "Evaluate your existing manufacturing infrastructure, supplier relationships, and financial capacity. Understand your ability to produce consistent quality at scale."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "Identify Market Gaps in Regional Packaged Foods",
+            "text": "Research consumer preferences for edible oils, snacks, and packaged foods in Jalgaon and surrounding markets. Look for unmet needs that align with your production strengths."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "Build or Acquire Branding and Distribution Capabilities",
+            "text": "Develop a brand identity, packaging design, and establish dealer networks. Consider private label manufacturing to generate revenue while building your own brand."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 4,
+            "name": "Ensure Regulatory Compliance and Quality Systems",
+            "text": "Obtain FSSAI licenses, food safety certifications, and establish robust quality control systems to maintain consistency and consumer trust."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 5,
+            "name": "Plan Working Capital and Scale Gradually",
+            "text": "Understand the extended cash conversion cycle of packaged goods. Start with a limited product range, test the market, and expand based on response."
+          }
+        ]
+      },
+      /* ---- ADDED: Place with GeoCircle for Jalgaon ---- */
+      {
+        "@type": "Place",
+        "@id": "https://charwakcd.github.io/fmcg-business/oil-jalgaon/#place",
+        "name": "Jalgaon Manufacturing & Trading Region",
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "Maharashtra",
+          "addressLocality": "Jalgaon",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 21.0076,
+          "longitude": 76.1136
+        },
+        "spatialCoverage": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": 21.0076,
+            "longitude": 76.1136
+          },
+          "geoRadius": "50000"
+        }
       }
     ]
   }
@@ -1034,6 +1114,16 @@
             "vars": {
               "event_name": "click",
               "event_category": "Outbound",
+              "event_label": "${storyPageId}"
+            }
+          },
+          /* ---- ADDED: FAQ interaction tracking ---- */
+          "faqInteraction": {
+            "on": "click",
+            "selector": ".faq-accordion h4",
+            "vars": {
+              "event_name": "click",
+              "event_category": "FAQ Interaction",
               "event_label": "${storyPageId}"
             }
           }
