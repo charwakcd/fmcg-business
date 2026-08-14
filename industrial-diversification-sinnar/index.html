@@ -16,6 +16,9 @@
   <link rel="preload" as="image" href="https://images.pexels.com/photos/3862637/pexels-photo-3862637.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1200&h=1600&q=80" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Additional preconnects for performance -->
+  <link rel="preconnect" href="https://images.pexels.com" crossorigin />
+  <link rel="dns-prefetch" href="https://images.pexels.com" />
   
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
@@ -43,7 +46,7 @@
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
   <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   
-  <!-- Production CSS -->
+  <!-- Production CSS (enhanced with glass override and CTA hover) -->
   <style amp-custom>
     :root {
       --accent: #FF6B35;
@@ -84,6 +87,7 @@
       background: linear-gradient(180deg, rgba(18, 22, 26, 0.05) 0%, rgba(18, 22, 26, 0.25) 45%, rgba(18, 22, 26, 0.9) 100%);
     }
 
+    /* Original .text-container (will be overridden below) */
     .text-container {
       padding: 24px 20px 28px;
       margin: auto 15px 20px;
@@ -96,6 +100,16 @@
       border: none;
       border-radius: 0;
       box-shadow: none;
+    }
+
+    /* ---- ENHANCED GLASS EFFECT (overrides above) ---- */
+    amp-story-page .text-container {
+      background: rgba(0, 0, 0, 0.35) !important;
+      backdrop-filter: blur(6px) !important;
+      -webkit-backdrop-filter: blur(6px) !important;
+      border: 1px solid rgba(255, 255, 255, 0.06) !important;
+      border-radius: 14px !important;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25) !important;
     }
 
     h1, h2, h3, p, .hero-sub, .badge {
@@ -215,13 +229,14 @@
       font-family: var(--font-mono);
       letter-spacing: 0.04em;
       margin-top: 12px;
-      transition: background 0.2s ease;
+      transition: background 0.2s ease, transform 0.2s ease;
       clip-path: polygon(0 0, 100% 0, 100% 70%, 94% 100%, 0 100%);
       text-shadow: none;
     }
 
     .cta-btn:hover {
       background: var(--paper);
+      transform: translateY(-1px);
     }
 
     .cta-arrow {
@@ -231,6 +246,44 @@
 
     .cta-btn:hover .cta-arrow {
       transform: translateX(3px);
+    }
+
+    /* ==== KEY TAKEAWAYS (Added for Generative AI / RAG) ==== */
+    .key-takeaways {
+      background: #fdfbf5;
+      border-left: 4px solid var(--accent);
+      padding: 14px 18px;
+      margin: 16px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .key-takeaways h4 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 15px;
+      text-shadow: none;
+    }
+    .key-takeaways ol {
+      padding-left: 20px;
+      margin: 0;
+      list-style-type: none;
+    }
+    .key-takeaways ol li {
+      color: #3A4147;
+      font-size: 13px;
+      line-height: 1.6;
+      margin-bottom: 5px;
+      text-shadow: none;
+    }
+    .key-takeaways ol li strong {
+      color: #000;
+    }
+    .key-takeaways ol li::before {
+      content: "✔ ";
+      color: var(--accent);
+      font-weight: 700;
     }
 
     /* Attachment styles */
@@ -371,7 +424,7 @@
     }
   </style>
 
-  <!-- Full Schema -->
+  <!-- Full Schema (appended with HowTo and Place) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -506,6 +559,71 @@
           {"@type":"DefinedTerm","name":"SKU","description":"Stock Keeping Unit, representing a distinct marketable item in inventory."},
           {"@type":"DefinedTerm","name":"Food Formulation","description":"The scientific process of designing a food recipe for mass production, balancing taste, cost, nutrition, and stability."}
         ]
+      },
+      /* ---- ADDED: HowTo Schema ---- */
+      {
+        "@type": "HowTo",
+        "@id": "https://charwakcd.github.io/fmcg-business/industrial-diversification-sinnar/#howto",
+        "name": "How to Diversify from Industrial Engineering to Consumer Brands in Sinnar MIDC",
+        "description": "A step-by-step guide for engineering manufacturers in Sinnar, Musalgaon, and Malegaon to leverage their precision manufacturing expertise and enter consumer goods and FMCG sectors.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "Assess Core Engineering Capabilities",
+            "text": "Evaluate your existing lean manufacturing, quality systems, preventive maintenance, and vendor development processes. These disciplines are directly transferable to automated food and consumer goods production."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "Identify Consumer Product Adjacencies",
+            "text": "Research FMCG, packaged foods, or personal care sectors that align with your production strengths. Consider private label opportunities to utilize excess capacity while learning new markets near Sinnar."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "Acquire or Build – Evaluate Both Options",
+            "text": "Acquiring an existing consumer brand or manufacturing business provides immediate dealer networks and market acceptance. Building from scratch requires longer time and higher marketing investment."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 4,
+            "name": "Develop Distribution and Dealer Networks",
+            "text": "Consumer success depends on strong dealer relationships. Leverage your existing supply chain discipline to build robust distribution channels in your region."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 5,
+            "name": "Plan Working Capital and Financial Strategy",
+            "text": "Consumer businesses have longer cash conversion cycles. Ensure adequate funding for inventory, retail credit, and marketing while maintaining B2B operations."
+          }
+        ]
+      },
+      /* ---- ADDED: Place with GeoCircle for Sinnar ---- */
+      {
+        "@type": "Place",
+        "@id": "https://charwakcd.github.io/fmcg-business/industrial-diversification-sinnar/#place",
+        "name": "Sinnar Industrial & Manufacturing Region",
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "Maharashtra",
+          "addressLocality": "Sinnar",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 19.8452,
+          "longitude": 73.9991
+        },
+        "spatialCoverage": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": 19.8452,
+            "longitude": 73.9991
+          },
+          "geoRadius": "30000"
+        }
       }
     ]
   }
@@ -650,6 +768,17 @@
             <li>Using established vendor development methods for raw material sourcing.</li>
             <li>Translating ISO systems into robust FSSAI compliance protocols.</li>
           </ul>
+
+          <!-- ===== KEY TAKEAWAYS BLOCK (Added) ===== -->
+          <div class="key-takeaways">
+            <h4>📌 Key Takeaways for Industrial Diversification</h4>
+            <ol>
+              <li><strong>Leverage Lean Manufacturing</strong> — Transfer existing quality, maintenance, and planning systems to new sectors</li>
+              <li><strong>Brands Create Enterprise Value</strong> — Consumer trust and repeat purchases build long-term worth</li>
+              <li><strong>Acquire Existing Businesses</strong> — Save years of dealer network development and brand building</li>
+              <li><strong>Plan Working Capital Carefully</strong> — Consumer goods have longer cash cycles; prepare accordingly</li>
+            </ol>
+          </div>
 
           <hr />
 
@@ -838,7 +967,7 @@
       </amp-story-grid-layer>
     </amp-story-page>
 
-    <!-- ===== ANALYTICS (GA4 with gtag) ===== -->
+    <!-- ===== ANALYTICS (GA4 with gtag + FAQ tracking) ===== -->
     <amp-analytics type="gtag" data-credentials="include">
       <script type="application/json">
       {
@@ -864,6 +993,16 @@
             "vars": {
               "event_name": "click",
               "event_category": "Outbound",
+              "event_label": "${storyPageId}"
+            }
+          },
+          /* ---- ADDED: FAQ interaction tracking ---- */
+          "faqInteraction": {
+            "on": "click",
+            "selector": ".faq-accordion h4",
+            "vars": {
+              "event_name": "click",
+              "event_category": "FAQ Interaction",
               "event_label": "${storyPageId}"
             }
           }
