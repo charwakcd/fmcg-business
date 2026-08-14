@@ -17,6 +17,9 @@
   <link rel="preload" as="image" href="https://images.pexels.com/photos/19233057/pexels-photo-19233057.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1600&w=1200" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Additional preconnects for performance -->
+  <link rel="preconnect" href="https://images.pexels.com" crossorigin />
+  <link rel="dns-prefetch" href="https://images.pexels.com" />
 
   <!-- Open Graph (Discover-facing title) -->
   <meta property="og:type" content="article" />
@@ -45,7 +48,7 @@
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
   <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
-  <!-- Production CSS -->
+  <!-- Production CSS (enhanced with glass override and CTA hover) -->
   <style amp-custom>
     :root {
       --accent: #FF6B35;
@@ -86,6 +89,7 @@
       background: linear-gradient(180deg, rgba(18, 22, 26, 0.05) 0%, rgba(18, 22, 26, 0.25) 45%, rgba(18, 22, 26, 0.9) 100%);
     }
 
+    /* Original .text-container (will be overridden below) */
     .text-container {
       padding: 24px 20px 28px;
       margin: auto 15px 20px;
@@ -98,6 +102,16 @@
       border: none;
       border-radius: 0;
       box-shadow: none;
+    }
+
+    /* ---- ENHANCED GLASS EFFECT (overrides above) ---- */
+    amp-story-page .text-container {
+      background: rgba(0, 0, 0, 0.35) !important;
+      backdrop-filter: blur(6px) !important;
+      -webkit-backdrop-filter: blur(6px) !important;
+      border: 1px solid rgba(255, 255, 255, 0.06) !important;
+      border-radius: 14px !important;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25) !important;
     }
 
     h1, h2, h3, p, .hero-sub, .badge {
@@ -217,13 +231,14 @@
       font-family: var(--font-mono);
       letter-spacing: 0.04em;
       margin-top: 12px;
-      transition: background 0.2s ease;
+      transition: background 0.2s ease, transform 0.2s ease;
       clip-path: polygon(0 0, 100% 0, 100% 70%, 94% 100%, 0 100%);
       text-shadow: none;
     }
 
     .cta-btn:hover {
       background: var(--paper);
+      transform: translateY(-1px);
     }
 
     .cta-arrow {
@@ -411,7 +426,7 @@
     }
   </style>
 
-  <!-- Full Schema -->
+  <!-- Full Schema (appended with HowTo and Place) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -586,6 +601,71 @@
           {"@type":"DefinedTerm","name":"Market Access","description":"The practical ability of a business to reach and sell to its target customers through distribution, brand presence, and retail relationships."},
           {"@type":"DefinedTerm","name":"Customer Acquisition","description":"The process and cost associated with converting a prospective buyer into a paying, repeat customer."}
         ]
+      },
+      /* ---- ADDED: HowTo Schema ---- */
+      {
+        "@type": "HowTo",
+        "@id": "https://charwakcd.github.io/fmcg-business/industrial-consumer-pune/#howto",
+        "name": "How to Diversify from Industrial Manufacturing to Consumer Brands in Pune",
+        "description": "A step-by-step guide for industrial manufacturers in Pune's Pimpri-Chinchwad, Bhosari MIDC, Chakan, and Talegaon clusters to leverage their engineering excellence and enter consumer goods and FMCG sectors.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "Assess Core Manufacturing Capabilities",
+            "text": "Evaluate your existing production systems, lean manufacturing, quality management, vendor development, and supply chain integration. These disciplines are directly transferable to consumer goods manufacturing in your area."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "Identify Consumer Product Opportunities",
+            "text": "Research FMCG, food processing, personal care, or packaging sectors that align with your production strengths. Understand regional consumer preferences and competitive gaps near Pune."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "Evaluate Acquisition vs. Greenfield",
+            "text": "Consider acquiring an existing consumer brand or manufacturing business to gain immediate market access, established dealer networks, and brand recognition. Greenfield requires longer time and higher marketing spend."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 4,
+            "name": "Build or Integrate Dealer and Distribution Networks",
+            "text": "Develop strong relationships with distributors, wholesalers, and retailers. A robust dealer network is often more valuable than production equipment in consumer markets."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 5,
+            "name": "Plan Working Capital and Financial Strategy",
+            "text": "Consumer businesses typically have longer working capital cycles due to inventory, retail credit, and marketing expenses. Ensure adequate funding and cash flow management before scaling."
+          }
+        ]
+      },
+      /* ---- ADDED: Place with GeoCircle for Pune ---- */
+      {
+        "@type": "Place",
+        "@id": "https://charwakcd.github.io/fmcg-business/industrial-consumer-pune/#place",
+        "name": "Pune Industrial & Manufacturing Region",
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "Maharashtra",
+          "addressLocality": "Pune",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 18.5204,
+          "longitude": 73.8567
+        },
+        "spatialCoverage": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": 18.5204,
+            "longitude": 73.8567
+          },
+          "geoRadius": "50000"
+        }
       }
     ]
   }
@@ -936,7 +1016,7 @@
       </amp-story-grid-layer>
     </amp-story-page>
 
-    <!-- ===== ANALYTICS (GA4 with gtag) ===== -->
+    <!-- ===== ANALYTICS (GA4 with gtag + FAQ tracking) ===== -->
     <amp-analytics type="gtag" data-credentials="include">
       <script type="application/json">
       {
@@ -962,6 +1042,16 @@
             "vars": {
               "event_name": "click",
               "event_category": "Outbound",
+              "event_label": "${storyPageId}"
+            }
+          },
+          /* ---- ADDED: FAQ interaction tracking ---- */
+          "faqInteraction": {
+            "on": "click",
+            "selector": ".faq-accordion h4",
+            "vars": {
+              "event_name": "click",
+              "event_category": "FAQ Interaction",
               "event_label": "${storyPageId}"
             }
           }
