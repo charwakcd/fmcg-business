@@ -15,6 +15,9 @@
   <link rel="preload" as="image" href="https://images.pexels.com/photos/8439388/pexels-photo-8439388.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1200&h=1600&q=80" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Additional preconnects for performance -->
+  <link rel="preconnect" href="https://images.pexels.com" crossorigin />
+  <link rel="dns-prefetch" href="https://images.pexels.com" />
 
   <meta name="thumbnail" content="https://images.pexels.com/photos/8439388/pexels-photo-8439388.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1200&h=1600&q=80" />
   <meta itemprop="thumbnailUrl" content="https://images.pexels.com/photos/8439388/pexels-photo-8439388.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1200&h=1600&q=80" />
@@ -53,7 +56,7 @@
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
   <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
-  <!-- Production CSS -->
+  <!-- Production CSS (original) -->
   <style amp-custom>
     :root {
       --accent: #FF6B35;
@@ -94,6 +97,7 @@
       background: linear-gradient(180deg, rgba(18, 22, 26, 0.05) 0%, rgba(18, 22, 26, 0.25) 45%, rgba(18, 22, 26, 0.9) 100%);
     }
 
+    /* Original .text-container – we keep it, but we'll override with a more specific rule below */
     .text-container {
       padding: 24px 20px 28px;
       margin: auto 15px 20px;
@@ -106,6 +110,16 @@
       border: none;
       border-radius: 0;
       box-shadow: none;
+    }
+
+    /* ---- ENHANCED GLASS EFFECT (overrides above) ---- */
+    amp-story-page .text-container {
+      background: rgba(0, 0, 0, 0.35) !important;
+      backdrop-filter: blur(6px) !important;
+      -webkit-backdrop-filter: blur(6px) !important;
+      border: 1px solid rgba(255, 255, 255, 0.06) !important;
+      border-radius: 14px !important;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25) !important;
     }
 
     h1, h2, h3, p, .hero-sub, .badge {
@@ -225,13 +239,14 @@
       font-family: var(--font-mono);
       letter-spacing: 0.04em;
       margin-top: 12px;
-      transition: background 0.2s ease;
+      transition: background 0.2s ease, transform 0.2s ease;
       clip-path: polygon(0 0, 100% 0, 100% 70%, 94% 100%, 0 100%);
       text-shadow: none;
     }
 
     .cta-btn:hover {
       background: var(--paper);
+      transform: translateY(-1px);
     }
 
     .cta-arrow {
@@ -419,7 +434,7 @@
     }
   </style>
 
-  <!-- Full Schema -->
+  <!-- ===== ENHANCED SCHEMA (appended with HowTo, Place, GeoCircle) ===== -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -680,6 +695,65 @@
           { "@type": "DefinedTerm", "name": "Manufacturing Scale-Up", "description": "The process of transitioning a food product from a small laboratory batch to full-scale commercial factory production." },
           { "@type": "DefinedTerm", "name": "Consumer Packaged Goods (CPG)", "description": "Items used daily by average consumers that require routine replacement or replenishment, such as food, beverages, and household products." }
         ]
+      },
+      /* ---- ADDED: HowTo Schema ---- */
+      {
+        "@type": "HowTo",
+        "@id": "https://charwakcd.github.io/fmcg-business/product-development-nashik/#howto",
+        "name": "How to Transition from Food Technologist to Factory Owner in Nashik",
+        "description": "A step-by-step guide for food technologists considering acquisition of an existing food manufacturing facility in the Nashik region.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "Evaluate Your Technical Expertise",
+            "text": "Assess your understanding of product formulation, food safety, quality assurance, and production processes. Your technical background is the foundation for effective factory management."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "Identify Acquisition Targets in Nashik",
+            "text": "Research existing food manufacturing facilities in Ambad MIDC, Satpur MIDC, Sinnar, and other industrial areas. Look for businesses with established production lines, regulatory approvals, and supplier relationships."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "Conduct Operational and Financial Due Diligence",
+            "text": "Review production capacity, quality records, regulatory compliance, working capital needs, dealer networks, and financial statements. Understand the cash conversion cycle and potential for product expansion."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 4,
+            "name": "Develop a Post-Acquisition Growth Strategy",
+            "text": "Plan how to leverage your technical expertise to improve product quality, introduce new SKUs, strengthen dealer relationships, and build a regional brand. Align with market trends for healthier or regional snack products."
+          }
+        ]
+      },
+      /* ---- ADDED: Place with GeoCircle for Nashik ---- */
+      {
+        "@type": "Place",
+        "@id": "https://charwakcd.github.io/fmcg-business/product-development-nashik/#place",
+        "name": "Nashik Manufacturing Region",
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "Maharashtra",
+          "addressLocality": "Nashik",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 19.9975,
+          "longitude": 73.7898
+        },
+        "spatialCoverage": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": 19.9975,
+            "longitude": 73.7898
+          },
+          "geoRadius": "50000"
+        }
       }
     ]
   }
@@ -1068,6 +1142,16 @@
             "vars": {
               "event_name": "click",
               "event_category": "Outbound",
+              "event_label": "${storyPageId}"
+            }
+          },
+          /* ---- ADDED: FAQ interaction tracking ---- */
+          "faqInteraction": {
+            "on": "click",
+            "selector": ".faq-accordion h4",
+            "vars": {
+              "event_name": "click",
+              "event_category": "FAQ Interaction",
               "event_label": "${storyPageId}"
             }
           }
